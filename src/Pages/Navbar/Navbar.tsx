@@ -1,5 +1,5 @@
-import logo from "../assets/logo.png";
-import { colorresCSS } from "../CustomTheme/variables";
+import logo from "../../assets/logo.png";
+import { colorresCSS } from "../../CustomTheme/variables";
 
 export const Navbar = (): React.JSX.Element => {
   return (
