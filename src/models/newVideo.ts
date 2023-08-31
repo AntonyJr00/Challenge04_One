@@ -15,3 +15,10 @@ export interface Video {
   url: string;
   image: string;
 }
+
+export interface Categories {
+  id: string;
+  name: string;
+  color: string;
+  description: string;
+}

@@ -1,15 +1,30 @@
 import { useEffect, useState } from "react";
-import { Video } from "../models/newVideo";
+import { Categories, Video } from "../models/newVideo";
 
-export const useFetch = (url: string) => {
-  const [dataApi, setDataApi] = useState<Video[] | null>(null);
+export const useFetchVideos = () => {
+  const url = "http://localhost:3000/videos";
+  const [dataVideos, setDataVideos] = useState<Video[] | null>(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
     fetch(url)
       .then((response) => response.json())
-      .then((data) => setDataApi(data))
+      .then((data) => setDataVideos(data))
       .finally(() => setLoading(false));
   }, [url]);
-  return { dataApi, loading };
+  return { dataVideos, loadingV: loading };
+};
+
+export const useFetchCategory = () => {
+  const url = "http://localhost:3000/categories";
+  const [dataCategory, setDataCategory] = useState<Categories[] | null>(null);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setDataCategory(data))
+      .finally(() => setLoading(false));
+  }, [url]);
+  return { dataCategory, loadingC: loading };
 };
