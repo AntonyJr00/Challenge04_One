@@ -1,0 +1,214 @@
+{
+  "users": [
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "front-end"
+    },
+    {
+      "id": 2,
+      "name": "back-end"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "Python Crash Course for Beginners",
+      "category": "back-end",
+      "description": "Beginner's course in Python starting from scratch, covering fundamental concepts and learning to apply them through code written in the terminal or editor for immediate feedback.",
+      "url": "https://www.youtube.com/embed/Kp4Mvapo5kc",
+      "image": "https://i3.ytimg.com/vi/Kp4Mvapo5kc/maxresdefault.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Complete JavaScript Course from Scratch",
+      "category": "front-end",
+      "description": "Comprehensive JavaScript course covering fundamental concepts and their immediate application by writing code in an editor or terminal for instant learning feedback.",
+      "url": "https://www.youtube.com/embed/Eh-s-n_6zNQ",
+      "image": "https://i3.ytimg.com/vi/Eh-s-n_6zNQ/maxresdefault.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Learn Node.js and Express - Beginner's Course",
+      "category": "front-end",
+      "description": "Course on Node.js and Express.js covering fundamental concepts on the backend or server side.",
+      "url": "https://www.youtube.com/embed/1hpc70_OoAg",
+      "image": "https://i3.ytimg.com/vi/1hpc70_OoAg/maxresdefault.jpg"
+    },
+    {
+      "id": 4,
+      "title": "React.js from Scratch | Complete Tutorial Course",
+      "category": "front-end",
+      "description": "Course on the React.js library covering fundamental concepts and immediate application.",
+      "url": "https://www.youtube.com/embed/ladwC6Lrs-M",
+      "image": "https://i3.ytimg.com/vi/ladwC6Lrs-M/maxresdefault.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Learn React.js with 3 Included Projects! +6 hours",
+      "category": "front-end",
+      "description": "Practical course on using the React.js library with projects of varying difficulty.",
+      "url": "https://www.youtube.com/embed/0C5yFwOYhAk",
+      "image": "https://i3.ytimg.com/vi/0C5yFwOYhAk/maxresdefault.jpg"
+    },
+    {
+      "id": 6,
+      "title": "React Course [2023]: From Basics to Creating Your First Stateful Components",
+      "category": "front-end",
+      "description": "Theoretical and practical course on React, ranging from basic to intermediate.",
+      "url": "https://www.youtube.com/embed/7iobxzd_2wY",
+      "image": "https://i3.ytimg.com/vi/7iobxzd_2wY/maxresdefault.jpg"
+    },
+    {
+      "id": 7,
+      "title": "All The JavaScript You Need To Know For React",
+      "category": "front-end",
+      "description": "Course on essential JavaScript aspects for understanding the React.js library.",
+      "url": "https://www.youtube.com/embed/m55PTVUrlnA",
+      "image": "https://i3.ytimg.com/vi/m55PTVUrlnA/maxresdefault.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Harvard CS50's Introduction to Programming with Python",
+      "category": "back-end",
+      "description": "Extremely comprehensive course on Python, covering fundamental concepts from basic to high-intermediate level.",
+      "url": "https://www.youtube.com/embed/nLRL_NcnK-4",
+      "image": "https://i3.ytimg.com/vi/nLRL_NcnK-4/maxresdefault.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Python As Fast as Possible - Learn Python in ~75 Minutes",
+      "category": "back-end",
+      "description": "Python course covering fundamental concepts in a condensed manner.",
+      "url": "https://www.youtube.com/embed/VchuKL44s6E",
+      "image": "https://i3.ytimg.com/vi/VchuKL44s6E/maxresdefault.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Learn Python With This ONE Project!",
+      "category": "back-end",
+      "description": "Practical Python course where concepts are learned or reinforced through hands-on experience.",
+      "url": "https://www.youtube.com/embed/th4OBktqK1I",
+      "image": "https://i3.ytimg.com/vi/th4OBktqK1I/maxresdefault.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Python Object Oriented Programming (OOP) - For Beginners",
+      "category": "back-end",
+      "description": "Python course focused on object-oriented programming, a dominant paradigm in today's advanced programming landscape.",
+      "url": "https://www.youtube.com/embed/JeznW_7DlB0",
+      "image": "https://i3.ytimg.com/vi/JeznW_7DlB0/maxresdefault.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Django, Beginner's Course for Django",
+      "category": "back-end",
+      "description": "Comprehensive beginner's course on the Django agile framework for Python.",
+      "url": "https://www.youtube.com/embed/T1intZyhXDU",
+      "image": "https://i3.ytimg.com/vi/T1intZyhXDU/maxresdefault.jpg"
+    },
+    {
+      "id": 13,
+      "title": "HTML5 Crash Course from Scratch (Complete)",
+      "category": "front-end",
+      "description": "HTML5 course covering fundamental concepts for structuring web pages.",
+      "url": "https://www.youtube.com/embed/kN1XP-Bef7w",
+      "image": "https://i3.ytimg.com/vi/kN1XP-Bef7w/maxresdefault.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Learn HTML-Full Tutorial for Beginners (2022)",
+      "category": "front-end",
+      "description": "HTML5 course from FreeCodeCamp, ideal for beginners.",
+      "url": "https://www.youtube.com/embed/kUMe1FH4CHE",
+      "image": "https://i3.ytimg.com/vi/kUMe1FH4CHE/maxresdefault.jpg"
+    },
+    {
+      "id": 15,
+      "title": "HTML Full Course - Build a Website Tutorial",
+      "category": "front-end",
+      "description": "HTML5 course from FreeCodeCamp with over 4 million views, ideal for beginners.",
+      "url": "https://www.youtube.com/embed/pQN-pnXPaVg",
+      "image": "https://i3.ytimg.com/vi/pQN-pnXPaVg/maxresdefault.jpg"
+    },
+    {
+      "id": 16,
+      "title": "HTML & Coding Introduction - Course for Beginners",
+      "category": "front-end",
+      "description": "HTML5 course from FreeCodeCamp introducing programming along with HTML.",
+      "url": "https://www.youtube.com/embed/GDGejH3SDNQ",
+      "image": "https://i3.ytimg.com/vi/GDGejH3SDNQ/maxresdefault.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Learn HTML Now! Complete FREE Course from Scratch",
+      "category": "front-end",
+      "description": "Comprehensive HTML course in Spanish with over 1 million views.",
+      "url": "https://www.youtube.com/embed/MJkdaVFHrto",
+      "image": "https://i3.ytimg.com/vi/MJkdaVFHrto/maxresdefault.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Tutorial HTML from Scratch-HTML5 For BEGINNERS",
+      "category": "front-end",
+      "description": "Comprehensive HTML5 course in Spanish, easily understandable and useful for beginners, done in Visual Studio Code.",
+      "url": "https://www.youtube.com/embed/vz4z0RLcAyk",
+      "image": "https://i3.ytimg.com/vi/vz4z0RLcAyk/maxresdefault.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Learn CSS Now! Complete FREE Course from Scratch",
+      "category": "front-end",
+      "description": "CSS course in Spanish ideal for beginners.",
+      "url": "https://www.youtube.com/embed/wZniZEbPAzk",
+      "image": "https://i3.ytimg.com/vi/wZniZEbPAzk/maxresdefault.jpg"
+    },
+    {
+      "id": 20,
+      "title": "CSS Course from Scratch (Complete)",
+      "category": "front-end",
+      "description": "CSS course in Spanish with over 3.5 million views and more than 9 hours of content, ideal for beginners.",
+      "url": "https://www.youtube.com/embed/OWKXEJN67FE",
+      "image": "https://i3.ytimg.com/vi/OWKXEJN67FE/maxresdefault.jpg"
+    },
+    {
+      "id": 21,
+      "title": "CSS from Scratch - BASIC CSS for BEGINNERS",
+      "category": "front-end",
+      "description": "CSS course from scratch ideal for beginners.",
+      "url": "https://www.youtube.com/embed/N8V5JhasaSE",
+      "image": "https://i3.ytimg.com/vi/N8V5JhasaSE/maxresdefault.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Learn HTML and CSS! with 5 Included Projects",
+      "category": "front-end",
+      "description": "Application course of HTML and CSS with included projects. Over 6 hours of content.",
+      "url": "https://www.youtube.com/embed/AXPASVeX74o",
+      "image": "https://i3.ytimg.com/vi/AXPASVeX74o/maxresdefault.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Learn HTML and CSS - Course from Scratch",
+      "category": "front-end",
+      "description": "HTML and CSS course from FreeCodeCamp with over 1 million views, in Spanish.",
+      "url": "https://www.youtube.com/embed/XqFR2lqBYPs",
+      "image": "https://i3.ytimg.com/vi/XqFR2lqBYPs/maxresdefault.jpg"
+    },
+    {
+      "id": 24,
+      "title": "CSS Full Course for Beginners | Complete All-in-One Tutorial",
+      "category": "front-end",
+      "description": "Very comprehensive CSS course with over 11 hours of content.",
+      "url": "https://www.youtube.com/embed/n4R2E7O-Ngo",
+      "image": "https://i3.ytimg.com/vi/n4R2E7O-Ngo/maxresdefault.jpg"
+    }
+  ]
+}

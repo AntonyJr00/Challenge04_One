@@ -1,13 +1,14 @@
-import { BannerMain } from "../../Pages/BannerMain/BannerMain";
-import { Navbar } from "../../Pages/Navbar/Navbar";
-import { VideoCard } from "../../Pages/VIdeoCard/VIdeoCard";
+import { NavBar, Logo } from "../../CustomTheme/CustomComponents";
+import { Button } from "../../Pages/Button/Button";
+import logo from "../../assets/logo.png";
 
 export const Header = (): React.JSX.Element => {
   return (
     <>
-      <Navbar />
-      <BannerMain />
-      <VideoCard />
+      <NavBar>
+        <Logo src={logo} alt="Logotipo" />
+        <Button content="Nuevo Video" />
+      </NavBar>
     </>
   );
 };

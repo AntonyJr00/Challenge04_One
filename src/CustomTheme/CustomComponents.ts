@@ -40,3 +40,24 @@ export const Wrapper = styled.div<{ $urlImgRef?: string }>`
     font-weight: 300;
   }
 `;
+
+export const NavBar = styled.nav`
+  background-color: ${colorresCSS.black.black_one};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid ${colorresCSS.primary};
+`;
+
+export const Logo = styled.img`
+  width: 100px;
+`;
+
+export const Boton = styled.button`
+  border: 1px solid ${colorresCSS.gray.gray_two};
+  background-color: ${colorresCSS.black.black_one};
+  color: ${colorresCSS.gray.gray_two};
+  padding: 0.4rem 0.8rem;
+  border-radius: 7px;
+`;

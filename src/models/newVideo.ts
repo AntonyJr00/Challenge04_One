@@ -1,4 +1,4 @@
-interface newVideo {
+export interface newVideo {
   title: string;
   linkVideo: string;
   linkImg: string;
@@ -7,4 +7,11 @@ interface newVideo {
   user: string;
 }
 
-export default newVideo;
+export interface Video {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  url: string;
+  image: string;
+}
