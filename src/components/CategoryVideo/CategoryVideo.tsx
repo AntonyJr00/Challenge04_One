@@ -1,6 +1,7 @@
 import { Button, Box } from "@mui/joy";
 import { Video } from "../../models/newVideo";
 import { useFetch } from "../../Services/useFetch";
+// import { colorresCSS } from "../../CustomTheme/variables";
 
 export const CategoryVideo = (): React.JSX.Element => {
   const { dataApi, loading } = useFetch("http://localhost:3000/videos");
@@ -8,7 +9,7 @@ export const CategoryVideo = (): React.JSX.Element => {
 
   return (
     <>
-      <Box>
+      <Box p={2}>
         {loading && <Button loading></Button>}
         {dataApi?.map((data: Video) => {
           const { id, category, image } = data;
