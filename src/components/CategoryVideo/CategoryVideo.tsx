@@ -8,37 +8,41 @@ import { colorresCSS } from "../../CustomTheme/variables";
 export const CategoryVideo = (): React.JSX.Element => {
   const { dataVideos } = useFetchVideos();
   const { dataCategory } = useFetchCategory();
-  // console.log(dataVideos);
   const filterVideosCategory = (categoryName: string) =>
     dataVideos?.filter((video) => video.category === categoryName);
   return (
     <>
-      <Box p={2} sx={{ backgroundColor: `#${colorresCSS.black.black_one}` }}>
+      <Box
+        p={2}
+        sx={{
+          backgroundColor: `#${colorresCSS.black.black_one}`,
+        }}
+      >
         {dataCategory?.map((category: Categories) => {
           const { id, name, color, description } = category;
           const videoForCategory = filterVideosCategory(name);
           return (
-            <Container key={id} maxWidth="xl">
+            <Container key={id} maxWidth="xl" sx={{ marginTop: "2rem" }}>
               <Button padding="1rem 2rem" content={name} color={color} />
-              <Typography variant="h6" color="lightblue">
+              <Typography variant="h6" mt={1} color="lightblue">
                 {description}
               </Typography>
               <Box
                 sx={{
+                  marginTop: ".5rem",
                   padding: "1rem 0",
                   gap: "20px",
                   display: "flex",
+                  justifyContent: "center",
                   flexWrap: "wrap",
                 }}
               >
                 {videoForCategory?.map((data: Video) => {
-                  console.log(data);
-
                   const { id, image, url } = data;
                   return (
-                    <a href={url} target="_blank">
+                    <a key={id} href={url} target="_blank">
                       <CardMedia
-                        key={id}
+                        loading="lazy"
                         component="img"
                         sx={{ width: 300 }}
                         image={image}
