@@ -65,4 +65,5 @@ export const Boton = styled.button<BotonProps>`
   color: white;
   padding: ${(props) => props.$paddingRef};
   border-radius: 7px;
+  cursor: pointer;
 `;
