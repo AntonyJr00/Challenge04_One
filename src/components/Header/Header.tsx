@@ -14,6 +14,7 @@ export const Header = (): React.JSX.Element => {
         </Link>
         <Link to="/formvideo">
           <Button
+            typeButton="button"
             content="Nuevo Video"
             color={colorresCSS.black.black_one}
             padding=".4rem .8rem"

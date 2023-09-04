@@ -25,7 +25,12 @@ export const CategoryVideo = (): React.JSX.Element => {
           const videoForCategory = filterVideosCategory(name);
           return (
             <Container key={id} maxWidth="xl" sx={{ marginTop: "2rem" }}>
-              <Button padding="1rem 2rem" content={name} color={color} />
+              <Button
+                type="button"
+                padding="1rem 2rem"
+                content={name}
+                color={color}
+              />
               <Typography variant="h6" mt={1} color="lightblue">
                 {description}
               </Typography>

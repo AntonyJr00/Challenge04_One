@@ -1,41 +1,116 @@
-import { Box, FormControl, MenuItem, TextField } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  MenuItem,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Button } from "../../../Pages/Button/Button";
 import { colorresCSS } from "../../../CustomTheme/variables";
+import { cyan } from "@mui/material/colors";
+
+import {
+  valTitle,
+  valLinkVideo,
+  valLinkImg,
+  valCategory,
+  valDescription,
+  valUser,
+} from "./validacion";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const FormVideo = () => {
+  const [title, setTitle] = useState("");
+  const [linkVideo, setLinkVideo] = useState("");
+  const [linImg, setLinkImg] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [Usuario, setUsuario] = useState("");
+
+  const [errorTitle, setErrorTitle] = useState<null | boolean>(null);
+  const [errorLinkVideo, setErrorLinkVideo] = useState<null | boolean>(null);
+  const [errorLinImg, setErrorLinkImg] = useState<null | boolean>(null);
+  const [errorCategory, setErrorCategory] = useState<null | boolean>(null);
+  const [errorDescription, setErrorDescription] = useState<null | boolean>(
+    null
+  );
+  const [errorUsuario, setErrorUsuario] = useState<null | boolean>(null);
+
+  const handleChange = (
+    evento: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    seter: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    const value = evento.target.value;
+    seter(value);
+  };
+
+  const handleClear = () => {
+    setTitle("");
+    setLinkVideo("");
+    setLinkImg("");
+    setCategory("");
+    setDescription("");
+    setUsuario("");
+  };
+
+  useEffect(() => {
+    console.log(
+      errorTitle,
+      errorCategory,
+      errorDescription,
+      errorLinImg,
+      errorLinkVideo,
+      errorUsuario
+    );
+  }, [
+    errorTitle,
+    errorCategory,
+    errorDescription,
+    errorLinImg,
+    errorLinkVideo,
+    errorUsuario,
+  ]);
+
   const personalData = [
     {
       label: "TItulo",
       variant: "outlined",
       type: "text",
       name: "titulo",
-      valid: null,
-      value: "",
+      valid: errorTitle,
+      value: title,
       helperText: "completa el campo titulo",
-      onchange: () => {},
-      validator: () => {},
+      onchange: handleChange,
+      validator: valTitle,
+      seter: setTitle,
+      setValid: setErrorTitle,
     },
     {
       label: "Link del video",
       variant: "outlined",
       type: "text",
       name: "linkvideo",
-      valid: null,
-      value: "",
+      valid: errorLinkVideo,
+      value: linkVideo,
       helperText: "completa el campo",
-      onchange: () => {},
-      validator: () => {},
+      onchange: handleChange,
+      validator: valLinkVideo,
+      seter: setLinkVideo,
+      setValid: setErrorLinkVideo,
     },
     {
       label: "Link de la imagen del video",
       variant: "outlined",
       type: "text",
       name: "linkimg",
-      valid: null,
-      value: "",
+      valid: errorLinImg,
+      value: linImg,
       helperText: "completa el campo",
-      onchange: () => {},
-      validator: () => {},
+      onchange: handleChange,
+      validator: valLinkImg,
+      seter: setLinkImg,
+      setValid: setErrorLinkImg,
     },
     {
       label: "Escoja una categoria",
@@ -43,12 +118,14 @@ export const FormVideo = () => {
       name: "category",
       type: "text",
       select: true,
-      valid: null,
-      value: "",
+      valid: errorCategory,
+      value: category,
       options: [{ name: "front-end" }, { name: "backend" }],
       helperText: "completa el campo",
-      onchange: () => {},
-      validator: () => {},
+      onchange: handleChange,
+      validator: valCategory,
+      seter: setCategory,
+      setValid: setErrorCategory,
     },
     {
       label: "Descripcion",
@@ -56,22 +133,26 @@ export const FormVideo = () => {
       name: "description",
       type: "text",
       multiline: true,
-      valid: null,
-      value: "",
+      valid: errorDescription,
+      value: description,
       helperText: "completa el campo",
-      onchange: () => {},
-      validator: () => {},
+      onchange: handleChange,
+      validator: valDescription,
+      seter: setDescription,
+      setValid: setErrorDescription,
     },
     {
       label: "Usuario",
       variant: "outlined",
       type: "text",
       name: "usuario",
-      valid: null,
-      value: "",
+      valid: errorUsuario,
+      value: Usuario,
       helperText: "completa el campo",
-      onchange: () => {},
-      validator: () => {},
+      onchange: handleChange,
+      validator: valUser,
+      seter: setUsuario,
+      setValid: setErrorUsuario,
     },
   ];
 
@@ -79,16 +160,35 @@ export const FormVideo = () => {
     <>
       <Box
         sx={{
-          backgroundColor: `#${colorresCSS.black.black_one}`,
-          height: "85vh",
+          backgroundColor: `#${colorresCSS.gray.gray_three}`,
+          minHeight: "85vh",
         }}
         component={"form"}
         autoComplete="off"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log("formulario video");
+          if (
+            errorTitle &&
+            errorCategory &&
+            errorDescription &&
+            errorLinImg &&
+            errorLinkVideo &&
+            errorUsuario
+          ) {
+            console.log("formulario video");
+          } else console.log("No se puedo pipipipip");
         }}
       >
+        <Typography
+          variant="h2"
+          fontWeight={400}
+          component="h2"
+          color={cyan[200]}
+          textAlign={"center"}
+          paddingTop={3}
+        >
+          Nuevo Video
+        </Typography>
         <FormControl
           fullWidth
           sx={{
@@ -100,24 +200,47 @@ export const FormVideo = () => {
           }}
         >
           {personalData.map((data) => {
-            const { name, label, type, multiline, select, options } = data;
+            const {
+              name,
+              label,
+              type,
+              multiline,
+              select,
+              options,
+              helperText,
+              valid,
+              value,
+              onchange,
+              validator,
+              seter,
+              setValid,
+            } = data;
             return (
               <TextField
                 key={name}
-                sx={{
-                  width: "60%",
-                  backgroundColor: `#${colorresCSS.gray.gray_two}`,
-                }}
+                sx={{ width: "60%" }}
                 multiline={multiline ? true : false}
-                select={select ? true : false}
+                select={select}
                 label={label}
-                variant="filled"
+                variant={"filled"}
                 type={type}
+                value={value}
+                error={valid === false}
+                helperText={valid === false && helperText}
+                onChange={(e) => !select && onchange(e, seter)}
+                onBlur={(e) => {
+                  const valido = validator(e.target.value);
+                  setValid(valido);
+                }}
               >
                 {select &&
-                  options &&
-                  options.map((option, index) => (
-                    <MenuItem key={index}>{option.name}</MenuItem>
+                  options?.map((option, index) => (
+                    <MenuItem
+                      value={option.name}
+                      children={option.name}
+                      key={index}
+                      onClick={() => seter(option.name)}
+                    />
                   ))}
               </TextField>
             );
@@ -128,22 +251,36 @@ export const FormVideo = () => {
           sx={{
             paddingBottom: "2rem",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-between",
             gap: "1.2rem",
           }}
         >
-          <Button
-            content="Guardar"
-            color={colorresCSS.primary}
-            padding="1rem 2rem"
-          />
-          <Button
-            content="Limpiar"
-            color={colorresCSS.gray.gray_one}
-            padding="1rem 2rem"
-          />
+          <div style={{ display: "flex", gap: ".5rem" }}>
+            <Button
+              typeButton="submit"
+              content="Guardar"
+              color={colorresCSS.primary}
+              padding="1rem 2rem"
+            />
+            <div onClick={() => handleClear()}>
+              <Button
+                typeButton="button"
+                content="Limpiar"
+                color={colorresCSS.gray.gray_one}
+                padding="1rem 2rem"
+              />
+            </div>
+          </div>
+          <Link to={"/categorias"}>
+            <Button
+              typeButton="button"
+              content="Nueva Categoria"
+              color={colorresCSS.primary}
+              padding="1rem 2rem"
+            />
+          </Link>
         </FormControl>
       </Box>
     </>
