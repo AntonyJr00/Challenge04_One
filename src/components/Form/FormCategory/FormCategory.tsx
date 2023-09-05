@@ -4,7 +4,7 @@ import { colorresCSS } from "../../../CustomTheme/variables";
 import { cyan } from "@mui/material/colors";
 
 import { valTitle, valColor, valDescription, valUser } from "../validacion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const FormCategory = () => {
   const [title, setTitle] = useState("");
@@ -24,8 +24,6 @@ export const FormCategory = () => {
     seter: React.Dispatch<React.SetStateAction<string>>
   ) => {
     const value = evento.target.value;
-    console.log(value);
-
     seter(value);
   };
 
@@ -36,9 +34,9 @@ export const FormCategory = () => {
     setUsuario("");
   };
 
-  useEffect(() => {
-    console.log(errorTitle, errorColor, errorDescription, errorUsuario);
-  }, [errorTitle, errorColor, errorDescription, errorUsuario]);
+  //   useEffect(() => {
+  //     console.log(errorTitle, errorColor, errorDescription, errorUsuario);
+  //   }, [errorTitle, errorColor, errorDescription, errorUsuario]);
 
   const personalData = [
     {
@@ -59,7 +57,7 @@ export const FormCategory = () => {
       variant: "outlined",
       type: "color",
       name: "color",
-      valid: color,
+      valid: errorColor,
       value: color,
       helperText: "Elije un color",
       onchange: handleChange,
