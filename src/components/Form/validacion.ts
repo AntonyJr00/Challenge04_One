@@ -28,3 +28,6 @@ export const valCategory = (value: string) => /^[a-zA-Z_-]+$/.test(value);
 export const valDescription = (value: string) => /^.{1,300}$/.test(value);
 
 export const valUser = (value: string) => /^[A-Za-z\s]{3,}$/.test(value);
+
+export const valColor = (value: string) =>
+  /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$/.test(value);

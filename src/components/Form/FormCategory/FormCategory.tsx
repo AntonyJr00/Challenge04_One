@@ -1,37 +1,19 @@
-import {
-  Box,
-  FormControl,
-  MenuItem,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, FormControl, TextField, Typography } from "@mui/material";
 import { Button } from "../../../Pages/Button/Button";
 import { colorresCSS } from "../../../CustomTheme/variables";
 import { cyan } from "@mui/material/colors";
 
-import {
-  valTitle,
-  valLinkVideo,
-  valLinkImg,
-  valCategory,
-  valDescription,
-  valUser,
-} from "../validacion";
+import { valTitle, valColor, valDescription, valUser } from "../validacion";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
-export const FormVideo = () => {
+export const FormCategory = () => {
   const [title, setTitle] = useState("");
-  const [linkVideo, setLinkVideo] = useState("");
-  const [linImg, setLinkImg] = useState("");
-  const [category, setCategory] = useState("");
+  const [color, setColor] = useState("#2cbed1");
   const [description, setDescription] = useState("");
   const [Usuario, setUsuario] = useState("");
 
   const [errorTitle, setErrorTitle] = useState<null | boolean>(null);
-  const [errorLinkVideo, setErrorLinkVideo] = useState<null | boolean>(null);
-  const [errorLinImg, setErrorLinkImg] = useState<null | boolean>(null);
-  const [errorCategory, setErrorCategory] = useState<null | boolean>(null);
+  const [errorColor, setErrorColor] = useState<null | boolean>(null);
   const [errorDescription, setErrorDescription] = useState<null | boolean>(
     null
   );
@@ -42,35 +24,21 @@ export const FormVideo = () => {
     seter: React.Dispatch<React.SetStateAction<string>>
   ) => {
     const value = evento.target.value;
+    console.log(value);
+
     seter(value);
   };
 
   const handleClear = () => {
     setTitle("");
-    setLinkVideo("");
-    setLinkImg("");
-    setCategory("");
+    setColor("#f5f5f5");
     setDescription("");
     setUsuario("");
   };
 
   useEffect(() => {
-    console.log(
-      errorTitle,
-      errorCategory,
-      errorDescription,
-      errorLinImg,
-      errorLinkVideo,
-      errorUsuario
-    );
-  }, [
-    errorTitle,
-    errorCategory,
-    errorDescription,
-    errorLinImg,
-    errorLinkVideo,
-    errorUsuario,
-  ]);
+    console.log(errorTitle, errorColor, errorDescription, errorUsuario);
+  }, [errorTitle, errorColor, errorDescription, errorUsuario]);
 
   const personalData = [
     {
@@ -87,45 +55,17 @@ export const FormVideo = () => {
       setValid: setErrorTitle,
     },
     {
-      label: "Link del video",
+      label: "Color",
       variant: "outlined",
-      type: "text",
-      name: "linkvideo",
-      valid: errorLinkVideo,
-      value: linkVideo,
-      helperText: "completa el campo",
+      type: "color",
+      name: "color",
+      valid: color,
+      value: color,
+      helperText: "Elije un color",
       onchange: handleChange,
-      validator: valLinkVideo,
-      seter: setLinkVideo,
-      setValid: setErrorLinkVideo,
-    },
-    {
-      label: "Link de la imagen del video",
-      variant: "outlined",
-      type: "text",
-      name: "linkimg",
-      valid: errorLinImg,
-      value: linImg,
-      helperText: "completa el campo",
-      onchange: handleChange,
-      validator: valLinkImg,
-      seter: setLinkImg,
-      setValid: setErrorLinkImg,
-    },
-    {
-      label: "Escoja una categoria",
-      variant: "outlined",
-      name: "category",
-      type: "text",
-      select: true,
-      valid: errorCategory,
-      value: category,
-      options: [{ name: "front-end" }, { name: "backend" }],
-      helperText: "completa el campo",
-      onchange: handleChange,
-      validator: valCategory,
-      seter: setCategory,
-      setValid: setErrorCategory,
+      validator: valColor,
+      seter: setColor,
+      setValid: setErrorColor,
     },
     {
       label: "Descripcion",
@@ -167,14 +107,7 @@ export const FormVideo = () => {
         autoComplete="off"
         onSubmit={(e) => {
           e.preventDefault();
-          if (
-            errorTitle &&
-            errorCategory &&
-            errorDescription &&
-            errorLinImg &&
-            errorLinkVideo &&
-            errorUsuario
-          ) {
+          if (errorTitle && errorDescription && errorUsuario) {
             console.log("formulario video");
           } else console.log("No se puedo pipipipip");
         }}
@@ -183,11 +116,11 @@ export const FormVideo = () => {
           variant="h2"
           fontWeight={400}
           component="h2"
-          color={cyan[200]}
+          color={cyan[300]}
           textAlign={"center"}
           paddingTop={3}
         >
-          Nuevo Video
+          Nueva Categoria
         </Typography>
         <FormControl
           fullWidth
@@ -205,8 +138,6 @@ export const FormVideo = () => {
               label,
               type,
               multiline,
-              select,
-              options,
               helperText,
               valid,
               value,
@@ -220,29 +151,18 @@ export const FormVideo = () => {
                 key={name}
                 sx={{ width: "60%" }}
                 multiline={multiline ? true : false}
-                select={select}
                 label={label}
+                value={value}
                 variant={"filled"}
                 type={type}
-                value={value}
                 error={valid === false}
                 helperText={valid === false && helperText}
-                onChange={(e) => !select && onchange(e, seter)}
+                onChange={(e) => onchange(e, seter)}
                 onBlur={(e) => {
                   const valido = validator(e.target.value);
                   setValid(valido);
                 }}
-              >
-                {select &&
-                  options?.map((option, index) => (
-                    <MenuItem
-                      value={option.name}
-                      children={option.name}
-                      key={index}
-                      onClick={() => seter(option.name)}
-                    />
-                  ))}
-              </TextField>
+              />
             );
           })}
         </FormControl>
@@ -251,36 +171,26 @@ export const FormVideo = () => {
           sx={{
             paddingBottom: "2rem",
             display: "flex",
-            flexDirection: "",
+            flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
-            gap: "1.2rem",
+            justifyContent: "center",
+            gap: ".7rem",
           }}
         >
-          <div style={{ display: "flex", gap: ".5rem" }}>
-            <Button
-              typeButton="submit"
-              content="Guardar"
-              color={colorresCSS.primary}
-              padding="1rem 2rem"
-            />
-            <div onClick={() => handleClear()}>
-              <Button
-                typeButton="button"
-                content="Limpiar"
-                color={colorresCSS.gray.gray_one}
-                padding="1rem 2rem"
-              />
-            </div>
-          </div>
-          <Link to={"/formcategory"}>
+          <Button
+            typeButton="submit"
+            content="Guardar"
+            color={colorresCSS.primary}
+            padding="1rem 2rem"
+          />
+          <div onClick={() => handleClear()}>
             <Button
               typeButton="button"
-              content="Nueva Categoria"
-              color={colorresCSS.primary}
+              content="Limpiar"
+              color={colorresCSS.gray.gray_one}
               padding="1rem 2rem"
             />
-          </Link>
+          </div>
         </FormControl>
       </Box>
     </>

@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer/Footer";
 import { FormVideo } from "./components/Form/FormVideo/FormVideo";
 import { CategoryVideo } from "./components/CategoryVideo/CategoryVideo";
 import { Routes, Route } from "react-router-dom";
+import { FormCategory } from "./components/Form/FormCategory/FormCategory";
 
 function App() {
   return (
@@ -25,6 +26,15 @@ function App() {
           element={[
             <Header key={1} />,
             <FormVideo key={2} />,
+            <Footer key={3} />,
+          ]}
+        />
+
+        <Route
+          path="/formcategory"
+          element={[
+            <Header key={1} />,
+            <FormCategory key={2} />,
             <Footer key={3} />,
           ]}
         />
