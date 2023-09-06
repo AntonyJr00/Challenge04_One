@@ -1,4 +1,4 @@
-export const valTitle = (value: string) => /^[A-Za-z\s]{3,}$/.test(value);
+export const valTitle = (value: string) => /^[A-Za-z\s\-_]{3,}$/.test(value);
 
 export const valLinkVideo = (value: string) => {
   const valor = value;

@@ -6,7 +6,8 @@ import { FormVideo } from "./components/Form/FormVideo/FormVideo";
 import { CategoryVideo } from "./components/CategoryVideo/CategoryVideo";
 import { Routes, Route } from "react-router-dom";
 import { FormCategory } from "./components/Form/FormCategory/FormCategory";
-import { TableCategory } from "./Pages/TableCategory/TableCategory";
+import { TableCategory } from "./components/Form/FormCategory/TableCategory";
+// import { CrudApp } from "./Routes/CrudApp";
 
 function App() {
   return (

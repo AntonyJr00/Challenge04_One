@@ -48,8 +48,6 @@ export const Slider = (props: PropsSlider): React.ReactElement => {
       newSettings.slidesToScroll !== settings.slidesToScroll
     )
       setSettings(newSettings);
-
-    console.log("bucle?");
   }, [settings]);
 
   return (
