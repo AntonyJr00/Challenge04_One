@@ -1,14 +1,34 @@
+import { useState, useEffect, useMemo } from "react";
+
 import { Box, FormControl, TextField, Typography } from "@mui/material";
 import { Button } from "../../../Pages/Button/Button";
 import { colorresCSS } from "../../../CustomTheme/variables";
 import { cyan } from "@mui/material/colors";
 
 import { valTitle, valColor, valDescription, valUser } from "../validacion";
-import { useState } from "react";
+import { TableCategory } from "./TableCategory";
+
+import { helpHttp } from "../../../Services/helpers/helpHttp";
+import { Categories } from "../../../models/newVideo";
 
 export const FormCategory = () => {
+  const initialForm: Categories = useMemo(
+    () => ({
+      id: null,
+      name: "",
+      color: "#2cbed1",
+      description: "",
+      user: "",
+    }),
+    []
+  );
+
+  const [form, setForm] = useState(initialForm);
+  const [toEdit, setToEdit] = useState<null | Categories>(null);
+  const [db, setDb] = useState<Categories[] | null>(null);
+
   const [title, setTitle] = useState("");
-  const [color, setColor] = useState("#2cbed1");
+  const [color, setColor] = useState("#cccccc");
   const [description, setDescription] = useState("");
   const [Usuario, setUsuario] = useState("");
 
@@ -19,11 +39,97 @@ export const FormCategory = () => {
   );
   const [errorUsuario, setErrorUsuario] = useState<null | boolean>(null);
 
+  const url = "http://localhost:3000/categories";
+  const api = useMemo(() => helpHttp(), []);
+
+  useEffect(() => {
+    helpHttp()
+      .get(url)
+      .then((res) => {
+        if (!res.err) {
+          setDb(res);
+        } else {
+          setDb(null);
+        }
+      });
+  }, []);
+
+  //------------------------------------------------------------------------------///
+  //------------------------------------------------------------------------------///
+
+  useEffect(() => {
+    if (toEdit) {
+      setForm(toEdit);
+      console.log(toEdit);
+    } else setForm(initialForm);
+  }, [initialForm, toEdit]);
+
+  useEffect(() => {
+    if (toEdit) {
+      setTitle(toEdit?.name);
+      setColor(toEdit?.color);
+      setDescription(toEdit?.description);
+      setUsuario(toEdit?.user);
+    }
+  }, [toEdit]);
+  //------------------------------------------------------------------------------///
+  //------------------------------------------------------------------------------///
+
+  const createData = (data: Categories) => {
+    data.id = Date.now().toString();
+    api
+      .post(url, {
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+      })
+      .then((res) => {
+        console.log(res);
+        if (!res.err) {
+          if (db) setDb([...db, res]);
+        }
+      });
+  };
+
+  const updateData = (data: Categories) => {
+    const endPoint = `${url}/${data.id}`;
+    api
+      .put(endPoint, {
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+      })
+      .then((res) => {
+        if (!res.err) {
+          const newData = db?.map((el) => (el.id === data.id ? data : el));
+          newData && setDb(newData);
+        }
+      })
+      .finally(() => handleClear());
+  };
+  const deleteData = (id: number | null | string) => {
+    console.log(id);
+    api
+      .del(`${url}/${id}`, {
+        headers: { "content-type": "application/json" },
+      })
+      .then((res) => {
+        if (!res.err) {
+          const newData = db?.filter((el) => el.id !== id);
+          newData && setDb(newData);
+        }
+      });
+  };
+
+  //------------------------------------------------------------------------------///
+  //------------------------------------------------------------------------------///
+  //------------------------------------------------------------------------------///
+
   const handleChange = (
     evento: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     seter: React.Dispatch<React.SetStateAction<string>>
   ) => {
     const value = evento.target.value;
+
+    setForm({ ...form, [evento.target.name]: value });
     seter(value);
   };
 
@@ -32,6 +138,16 @@ export const FormCategory = () => {
     setColor("#f5f5f5");
     setDescription("");
     setUsuario("");
+    setForm(initialForm);
+    setToEdit(null);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (errorTitle && errorColor && errorDescription && errorUsuario) {
+      if (form.id === null) createData(form);
+      else updateData(form);
+    } else console.log("No se puedo pipipipip");
   };
 
   //   useEffect(() => {
@@ -43,7 +159,7 @@ export const FormCategory = () => {
       label: "TItulo",
       variant: "outlined",
       type: "text",
-      name: "titulo",
+      name: "name",
       valid: errorTitle,
       value: title,
       helperText: "completa el campo titulo",
@@ -83,7 +199,7 @@ export const FormCategory = () => {
       label: "Usuario",
       variant: "outlined",
       type: "text",
-      name: "usuario",
+      name: "user",
       valid: errorUsuario,
       value: Usuario,
       helperText: "completa el campo",
@@ -99,16 +215,11 @@ export const FormCategory = () => {
       <Box
         sx={{
           backgroundColor: `#${colorresCSS.gray.gray_three}`,
-          minHeight: "85vh",
+          minHeight: "65vh",
         }}
         component={"form"}
         autoComplete="off"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (errorTitle && errorDescription && errorUsuario) {
-            console.log("formulario video");
-          } else console.log("No se puedo pipipipip");
-        }}
+        onSubmit={(e) => handleSubmit(e)}
       >
         <Typography
           variant="h2"
@@ -147,6 +258,7 @@ export const FormCategory = () => {
             return (
               <TextField
                 key={name}
+                name={name}
                 sx={{ width: "60%" }}
                 multiline={multiline ? true : false}
                 label={label}
@@ -191,6 +303,13 @@ export const FormCategory = () => {
           </div>
         </FormControl>
       </Box>
+      {db && (
+        <TableCategory
+          dataDb={db}
+          setToEdit={setToEdit}
+          deleteData={deleteData}
+        />
+      )}
     </>
   );
 };

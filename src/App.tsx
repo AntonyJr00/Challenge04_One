@@ -6,8 +6,6 @@ import { FormVideo } from "./components/Form/FormVideo/FormVideo";
 import { CategoryVideo } from "./components/CategoryVideo/CategoryVideo";
 import { Routes, Route } from "react-router-dom";
 import { FormCategory } from "./components/Form/FormCategory/FormCategory";
-import { TableCategory } from "./components/Form/FormCategory/TableCategory";
-// import { CrudApp } from "./Routes/CrudApp";
 
 function App() {
   return (
@@ -37,8 +35,7 @@ function App() {
           element={[
             <Header key={1} />,
             <FormCategory key={2} />,
-            <TableCategory key={3} />,
-            <Footer key={4} />,
+            <Footer key={3} />,
           ]}
         />
       </Routes>

@@ -7,10 +7,12 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 interface TCRowsProps {
   data: Categories;
   index: number;
+  setToEdit: React.Dispatch<React.SetStateAction<null | Categories>>;
+  deleteData: (id: number | null | string) => void;
 }
 
 export const TableCategoryRows = (props: TCRowsProps) => {
-  const { data, index } = props;
+  const { data, index, setToEdit, deleteData } = props;
   return (
     <>
       <TableRow
@@ -21,6 +23,7 @@ export const TableCategoryRows = (props: TCRowsProps) => {
         <TableCell>{data.description}</TableCell>
         <TableCell>
           <Button
+            onClick={() => setToEdit(data)}
             children="editar"
             variant="outlined"
             color="info"
@@ -29,6 +32,7 @@ export const TableCategoryRows = (props: TCRowsProps) => {
         </TableCell>
         <TableCell>
           <Button
+            onClick={() => deleteData(data.id)}
             children="remover"
             variant="outlined"
             color="error"

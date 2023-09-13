@@ -17,8 +17,9 @@ export interface Video {
 }
 
 export interface Categories {
-  id: string;
+  id: string | null;
   name: string;
   color: string;
   description: string;
+  user: string;
 }

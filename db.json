@@ -11,15 +11,37 @@
     {
       "id": "1",
       "name": "front-end",
-      "color": "6BD1FF",
-      "description": "Formacion Front-End de Alura Latam"
+      "color": "#6BD1FF",
+      "description": "Formacion Front-End de Alura Latam",
+      "user": ""
     },
     {
       "id": "2",
       "name": "back-end",
-      "color": "00C86F",
+      "color": "#00C86F",
       "description": "Formacion Back-End de Alura Latam",
       "user": ""
+    },
+    {
+      "id": "1694636522887",
+      "name": "data-science",
+      "color": "#c91d92",
+      "description": "Analista y gestion de datos",
+      "user": "Antony"
+    },
+    {
+      "id": "1694637065614",
+      "name": "resolve",
+      "color": "#c841b8",
+      "description": "probando edition del formulario",
+      "user": "antony"
+    },
+    {
+      "id": "1694642676656",
+      "name": "pablito",
+      "color": "#bd0f0f",
+      "description": "tanto despues de probarlo",
+      "user": "jijijaja"
     }
   ],
   "videos": [
