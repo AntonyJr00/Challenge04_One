@@ -31,7 +31,7 @@ export const Wrapper = styled.div<{ $urlImgRef?: string }>`
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 1.8rem;
-    color: #${colorresCSS.gray.gray_three};
+    color: ${colorresCSS.gray.gray_three};
   }
   & > Button {
     position: relative;
@@ -42,12 +42,12 @@ export const Wrapper = styled.div<{ $urlImgRef?: string }>`
 `;
 
 export const NavBar = styled.nav`
-  background-color: #${colorresCSS.black.black_one};
+  background-color: ${colorresCSS.black.black_one};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border-bottom: 2px solid #${colorresCSS.primary};
+  border-bottom: 2px solid ${colorresCSS.primary};
 `;
 
 export const Logo = styled.img`
@@ -61,7 +61,7 @@ interface BotonProps {
 
 export const Boton = styled.button<BotonProps>`
   border: 1px solid white;
-  background-color: #${(props) => props.$colorRef};
+  background-color: ${(props) => props.$colorRef};
   color: white;
   padding: ${(props) => props.$paddingRef};
   border-radius: 7px;

@@ -7,10 +7,11 @@ import { Video } from "../../../models/newVideo";
 
 interface PropsSlider {
   videoForCategory: Video[] | undefined;
+  colors: string;
 }
 
 export const Slider = (props: PropsSlider): React.ReactElement => {
-  const { videoForCategory } = props;
+  const { videoForCategory, colors } = props;
   const [settings, setSettings] = useState({
     dots: false,
     lazyload: true,
@@ -59,7 +60,12 @@ export const Slider = (props: PropsSlider): React.ReactElement => {
             <CardMedia
               loading="lazy"
               component="img"
-              sx={{ width: "97%", gap: "10px" }}
+              sx={{
+                width: "97%",
+                gap: "10px",
+                outline: `3px solid ${colors}`,
+                margin: "2px",
+              }}
               image={image}
               alt="video"
             />

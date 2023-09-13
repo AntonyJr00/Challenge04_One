@@ -17,7 +17,7 @@ export const CategoryVideo = (): React.JSX.Element => {
       <Box
         p={2}
         sx={{
-          backgroundColor: `#${colorresCSS.black.black_one}`,
+          backgroundColor: `${colorresCSS.black.black_one}`,
         }}
       >
         {dataCategory?.map((category: Categories) => {
@@ -26,16 +26,16 @@ export const CategoryVideo = (): React.JSX.Element => {
           return (
             <Container key={id} maxWidth="xl" sx={{ marginTop: "2rem" }}>
               <Button
-                type="button"
+                typeButton="button"
                 padding="1rem 2rem"
                 content={name}
                 color={color}
               />
-              <Typography variant="h6" mt={1} color="lightblue">
+              <Typography variant="h6" mt={1} mb={1} color="lightblue">
                 {description}
               </Typography>
               <Box>
-                <Slider videoForCategory={videoForCategory} />
+                <Slider videoForCategory={videoForCategory} colors={color} />
               </Box>
             </Container>
           );

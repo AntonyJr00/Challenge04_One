@@ -150,10 +150,6 @@ export const FormCategory = () => {
     } else console.log("No se puedo pipipipip");
   };
 
-  //   useEffect(() => {
-  //     console.log(errorTitle, errorColor, errorDescription, errorUsuario);
-  //   }, [errorTitle, errorColor, errorDescription, errorUsuario]);
-
   const personalData = [
     {
       label: "TItulo",
@@ -214,7 +210,7 @@ export const FormCategory = () => {
     <>
       <Box
         sx={{
-          backgroundColor: `#${colorresCSS.gray.gray_three}`,
+          backgroundColor: `${colorresCSS.gray.gray_three}`,
           minHeight: "65vh",
         }}
         component={"form"}

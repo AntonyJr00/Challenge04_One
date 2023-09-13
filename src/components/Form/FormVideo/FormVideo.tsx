@@ -160,7 +160,7 @@ export const FormVideo = () => {
     <>
       <Box
         sx={{
-          backgroundColor: `#${colorresCSS.gray.gray_three}`,
+          backgroundColor: `${colorresCSS.gray.gray_three}`,
           minHeight: "85vh",
         }}
         component={"form"}
