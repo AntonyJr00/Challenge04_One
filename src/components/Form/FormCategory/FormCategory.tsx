@@ -10,6 +10,7 @@ import { TableCategory } from "./TableCategory";
 
 import { helpHttp } from "../../../Services/helpers/helpHttp";
 import { Categories } from "../../../models/newVideo";
+import { v4 as uuidv4 } from "uuid";
 
 export const FormCategory = () => {
   const initialForm: Categories = useMemo(
@@ -76,7 +77,7 @@ export const FormCategory = () => {
   //------------------------------------------------------------------------------///
 
   const createData = (data: Categories) => {
-    data.id = Date.now().toString();
+    data.id = uuidv4();
     api
       .post(url, {
         body: JSON.stringify(data),

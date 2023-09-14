@@ -17,10 +17,13 @@ import {
   valDescription,
   valUser,
 } from "../validacion";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useFetchCategory } from "../../../Services/useFetch";
 
 export const FormVideo = () => {
+  const { dataCategory } = useFetchCategory();
+
   const [title, setTitle] = useState("");
   const [linkVideo, setLinkVideo] = useState("");
   const [linImg, setLinkImg] = useState("");
@@ -52,6 +55,20 @@ export const FormVideo = () => {
     setCategory("");
     setDescription("");
     setUsuario("");
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (
+      errorTitle &&
+      errorCategory &&
+      errorDescription &&
+      errorLinImg &&
+      errorLinkVideo &&
+      errorUsuario
+    ) {
+      console.log("formulario video");
+    } else console.log("No se puedo pipipipip");
   };
 
   useEffect(() => {
@@ -120,7 +137,7 @@ export const FormVideo = () => {
       select: true,
       valid: errorCategory,
       value: category,
-      options: [{ name: "front-end" }, { name: "backend" }],
+      // options: [{ name: "front-end" }, { name: "backend" }],
       helperText: "completa el campo",
       onchange: handleChange,
       validator: valCategory,
@@ -165,19 +182,7 @@ export const FormVideo = () => {
         }}
         component={"form"}
         autoComplete="off"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (
-            errorTitle &&
-            errorCategory &&
-            errorDescription &&
-            errorLinImg &&
-            errorLinkVideo &&
-            errorUsuario
-          ) {
-            console.log("formulario video");
-          } else console.log("No se puedo pipipipip");
-        }}
+        onSubmit={(e) => handleSubmit(e)}
       >
         <Typography
           variant="h2"
@@ -206,7 +211,6 @@ export const FormVideo = () => {
               type,
               multiline,
               select,
-              options,
               helperText,
               valid,
               value,
@@ -233,15 +237,18 @@ export const FormVideo = () => {
                   setValid(valido);
                 }}
               >
-                {select &&
-                  options?.map((option, index) => (
+                {select && dataCategory ? (
+                  dataCategory?.map((option, index) => (
                     <MenuItem
                       value={option.name}
                       children={option.name}
                       key={index}
                       onClick={() => seter(option.name)}
                     />
-                  ))}
+                  ))
+                ) : (
+                  <MenuItem value={"No option"} children={"No options"} />
+                )}
               </TextField>
             );
           })}

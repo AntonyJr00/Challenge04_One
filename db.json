@@ -28,6 +28,13 @@
       "color": "#c91d92",
       "description": "Analista y gestion de datos",
       "user": "Antony"
+    },
+    {
+      "id": "dca157b7-fb78-4eda-be41-f52f5868a161",
+      "name": "Design UX",
+      "color": "#edc226",
+      "description": "Formacion de diseño y estilizacion de Alura Latam",
+      "user": "Jorge"
     }
   ],
   "videos": [
