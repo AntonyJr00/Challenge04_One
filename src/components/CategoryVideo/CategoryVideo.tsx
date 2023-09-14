@@ -24,20 +24,23 @@ export const CategoryVideo = (): React.JSX.Element => {
           const { id, name, color, description } = category;
           const videoForCategory = filterVideosCategory(name);
           return (
-            <Container key={id} maxWidth="xl" sx={{ marginTop: "2rem" }}>
-              <Button
-                typeButton="button"
-                padding="1rem 2rem"
-                content={name}
-                color={color}
-              />
-              <Typography variant="h6" mt={1} mb={1} color="lightblue">
-                {description}
-              </Typography>
-              <Box>
-                <Slider videoForCategory={videoForCategory} colors={color} />
-              </Box>
-            </Container>
+            videoForCategory &&
+            videoForCategory?.length > 0 && (
+              <Container key={id} maxWidth="xl" sx={{ marginTop: "2rem" }}>
+                <Button
+                  typeButton="button"
+                  padding="1rem 2rem"
+                  content={name}
+                  color={color}
+                />
+                <Typography variant="h6" mt={1} mb={1} color="lightblue">
+                  {description}
+                </Typography>
+                <Box>
+                  <Slider videoForCategory={videoForCategory} colors={color} />
+                </Box>
+              </Container>
+            )
           );
         })}
       </Box>

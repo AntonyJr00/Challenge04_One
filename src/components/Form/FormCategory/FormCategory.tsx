@@ -208,25 +208,26 @@ export const FormCategory = () => {
   ];
 
   return (
-    <>
+    <div
+      style={{
+        minHeight: "85vh",
+        backgroundColor: `${colorresCSS.gray.gray_three}`,
+      }}
+    >
       <Box
-        sx={{
-          backgroundColor: `${colorresCSS.gray.gray_three}`,
-          minHeight: "65vh",
-        }}
         component={"form"}
         autoComplete="off"
         onSubmit={(e) => handleSubmit(e)}
       >
         <Typography
-          variant="h2"
+          variant="h3"
           fontWeight={400}
           component="h2"
-          color={cyan[300]}
+          color={cyan[400]}
           textAlign={"center"}
           paddingTop={3}
         >
-          Nueva Categoria
+          {toEdit === null ? "Nueva" : "Editar"} Categoria
         </Typography>
         <FormControl
           fullWidth
@@ -300,13 +301,13 @@ export const FormCategory = () => {
           </div>
         </FormControl>
       </Box>
-      {db && (
+      {db && window.screen.width >= 768 && (
         <TableCategory
           dataDb={db}
           setToEdit={setToEdit}
           deleteData={deleteData}
         />
       )}
-    </>
+    </div>
   );
 };

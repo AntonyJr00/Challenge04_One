@@ -26,22 +26,17 @@ export const Slider = (props: PropsSlider): React.ReactElement => {
     let newSettings = { ...settings };
 
     if (pantalla > 430)
-      newSettings = {
-        ...settings,
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      };
+      newSettings = { ...settings, slidesToShow: 2, slidesToScroll: 2 };
     if (pantalla > 768)
-      newSettings = {
-        ...settings,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-      };
+      newSettings = { ...settings, slidesToShow: 3, slidesToScroll: 3 };
     if (pantalla >= 1440)
+      newSettings = { ...settings, slidesToShow: 4, slidesToScroll: 4 };
+
+    if (videoForCategory && videoForCategory?.length < 3)
       newSettings = {
         ...settings,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: videoForCategory.length,
+        slidesToScroll: videoForCategory.length,
       };
 
     if (
@@ -49,7 +44,7 @@ export const Slider = (props: PropsSlider): React.ReactElement => {
       newSettings.slidesToScroll !== settings.slidesToScroll
     )
       setSettings(newSettings);
-  }, [settings]);
+  }, [settings, videoForCategory]);
 
   return (
     <SliderSlick {...settings}>
@@ -62,6 +57,7 @@ export const Slider = (props: PropsSlider): React.ReactElement => {
               component="img"
               sx={{
                 width: "97%",
+                maxWidth: "335px",
                 gap: "10px",
                 outline: `3px solid ${colors}`,
                 margin: "2px",
