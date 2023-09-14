@@ -1,5 +1,5 @@
 import { TableCell, TableRow, Button } from "@mui/material";
-import { Categories } from "../../models/newVideo";
+import { Categories } from "../../models/dbModels";
 import { blueGrey } from "@mui/material/colors";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";

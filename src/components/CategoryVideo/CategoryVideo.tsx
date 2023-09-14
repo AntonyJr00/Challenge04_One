@@ -2,7 +2,7 @@ import { Box } from "@mui/joy";
 import { Container, Typography } from "@mui/material";
 import { useFetchCategory, useFetchVideos } from "../../Services/useFetch";
 import { Button } from "../../Pages/Button/Button";
-import { Categories } from "../../models/newVideo";
+import { Categories } from "../../models/dbModels";
 import { colorresCSS } from "../../CustomTheme/variables";
 import { Slider } from "../Home/Slider/Slider";
 

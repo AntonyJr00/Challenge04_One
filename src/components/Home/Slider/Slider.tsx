@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect } from "react";
 import { CardMedia } from "@mui/material";
-import { Video } from "../../../models/newVideo";
+import { Video } from "../../../models/dbModels";
 
 interface PropsSlider {
   videoForCategory: Video[] | undefined;

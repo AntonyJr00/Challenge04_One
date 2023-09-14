@@ -9,7 +9,7 @@ import { valTitle, valColor, valDescription, valUser } from "../validacion";
 import { TableCategory } from "./TableCategory";
 
 import { helpHttp } from "../../../Services/helpers/helpHttp";
-import { Categories } from "../../../models/newVideo";
+import { Categories } from "../../../models/dbModels";
 import { v4 as uuidv4 } from "uuid";
 
 export const FormCategory = () => {

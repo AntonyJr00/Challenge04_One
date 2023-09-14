@@ -229,6 +229,24 @@
       "description": "Very comprehensive CSS course with over 11 hours of content.",
       "url": "https://www.youtube.com/embed/n4R2E7O-Ngo",
       "image": "https://i3.ytimg.com/vi/n4R2E7O-Ngo/maxresdefault.jpg"
+    },
+    {
+      "id": "d2187a64-1cb6-4fca-9e5a-469d3c9ab1f9",
+      "title": "React Router",
+      "category": "front-end",
+      "description": "Curso de React Router",
+      "url": "https://youtu.be/9w33u7hBWyk?si=vWFU1Y5jfF5mv6m6",
+      "image": "https://i3.ytimg.com/vi/9w33u7hBWyk/maxresdefault.jpg",
+      "user": "Jonmircha"
+    },
+    {
+      "id": "9a9ec203-8ee8-4bb1-a573-4111e69f1f8a",
+      "title": "RoadMap Data Science",
+      "category": "data-science",
+      "description": "Ruta data-science 2023 ",
+      "url": "https://www.youtube.com/watch?v=x9PlR2CLxwY",
+      "image": "https://i3.ytimg.com/vi/x9PlR2CLxwY/maxresdefault.jpg",
+      "user": "Rafa Gonzales"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Categories, Video } from "../models/newVideo";
+import { Categories, Video } from "../models/dbModels";
 
 export const useFetchVideos = () => {
   const url = "http://localhost:3000/videos";

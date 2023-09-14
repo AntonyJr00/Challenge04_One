@@ -8,7 +8,7 @@ export interface newVideo {
 }
 
 export interface Video {
-  id: number;
+  id: number | string;
   title: string;
   category: string;
   description: string;

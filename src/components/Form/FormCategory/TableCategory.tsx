@@ -9,7 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import { TableCategoryRows } from "../../../Pages/TableCategoryRow/TableCategoryRows";
 import { blueGrey } from "@mui/material/colors";
 
-import { Categories } from "../../../models/newVideo";
+import { Categories } from "../../../models/dbModels";
 
 interface TableCategoryProps {
   dataDb: Categories[] | null;

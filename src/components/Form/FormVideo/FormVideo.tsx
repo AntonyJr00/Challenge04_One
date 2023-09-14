@@ -1,3 +1,4 @@
+import { useState, useEffect, useMemo } from "react";
 import {
   Box,
   FormControl,
@@ -17,12 +18,28 @@ import {
   valDescription,
   valUser,
 } from "../validacion";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useFetchCategory } from "../../../Services/useFetch";
+import { Video } from "../../../models/dbModels";
+import { helpHttp } from "../../../Services/helpers/helpHttp";
+import { v4 as uuidv4 } from "uuid";
 
 export const FormVideo = () => {
   const { dataCategory } = useFetchCategory();
+
+  const initialForm: Video = useMemo(
+    () => ({
+      id: "",
+      title: "",
+      category: "",
+      description: "",
+      url: "",
+      image: "",
+    }),
+    []
+  );
+
+  const [formVideo, setFormVideo] = useState(initialForm);
 
   const [title, setTitle] = useState("");
   const [linkVideo, setLinkVideo] = useState("");
@@ -40,11 +57,27 @@ export const FormVideo = () => {
   );
   const [errorUsuario, setErrorUsuario] = useState<null | boolean>(null);
 
+  const api = useMemo(() => helpHttp(), []);
+
+  const createVideo = (data: Video) => {
+    data.id = uuidv4();
+    api
+      .post("http://localhost:3000/videos", {
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+      })
+      .then((res) => {
+        console.log(res);
+        if (!res.err) console.log(formVideo);
+      });
+  };
+
   const handleChange = (
     evento: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     seter: React.Dispatch<React.SetStateAction<string>>
   ) => {
     const value = evento.target.value;
+    setFormVideo({ ...formVideo, [evento.target.name]: value });
     seter(value);
   };
 
@@ -55,6 +88,7 @@ export const FormVideo = () => {
     setCategory("");
     setDescription("");
     setUsuario("");
+    setFormVideo(initialForm);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -68,33 +102,20 @@ export const FormVideo = () => {
       errorUsuario
     ) {
       console.log("formulario video");
+      createVideo(formVideo);
     } else console.log("No se puedo pipipipip");
   };
 
   useEffect(() => {
-    console.log(
-      errorTitle,
-      errorCategory,
-      errorDescription,
-      errorLinImg,
-      errorLinkVideo,
-      errorUsuario
-    );
-  }, [
-    errorTitle,
-    errorCategory,
-    errorDescription,
-    errorLinImg,
-    errorLinkVideo,
-    errorUsuario,
-  ]);
+    console.log(formVideo);
+  }, [formVideo]);
 
   const personalData = [
     {
       label: "TItulo",
       variant: "outlined",
       type: "text",
-      name: "titulo",
+      name: "title",
       valid: errorTitle,
       value: title,
       helperText: "completa el campo titulo",
@@ -107,7 +128,7 @@ export const FormVideo = () => {
       label: "Link del video",
       variant: "outlined",
       type: "text",
-      name: "linkvideo",
+      name: "url",
       valid: errorLinkVideo,
       value: linkVideo,
       helperText: "completa el campo",
@@ -120,7 +141,7 @@ export const FormVideo = () => {
       label: "Link de la imagen del video",
       variant: "outlined",
       type: "text",
-      name: "linkimg",
+      name: "image",
       valid: errorLinImg,
       value: linImg,
       helperText: "completa el campo",
@@ -137,7 +158,6 @@ export const FormVideo = () => {
       select: true,
       valid: errorCategory,
       value: category,
-      // options: [{ name: "front-end" }, { name: "backend" }],
       helperText: "completa el campo",
       onchange: handleChange,
       validator: valCategory,
@@ -162,7 +182,7 @@ export const FormVideo = () => {
       label: "Usuario",
       variant: "outlined",
       type: "text",
-      name: "usuario",
+      name: "user",
       valid: errorUsuario,
       value: Usuario,
       helperText: "completa el campo",
@@ -222,6 +242,7 @@ export const FormVideo = () => {
             return (
               <TextField
                 key={name}
+                name={name}
                 sx={{ width: "60%" }}
                 multiline={multiline ? true : false}
                 select={select}
@@ -243,7 +264,10 @@ export const FormVideo = () => {
                       value={option.name}
                       children={option.name}
                       key={index}
-                      onClick={() => seter(option.name)}
+                      onClick={() => {
+                        seter(option.name);
+                        setFormVideo({ ...formVideo, [name]: option.name });
+                      }}
                     />
                   ))
                 ) : (
