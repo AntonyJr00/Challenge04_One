@@ -118,7 +118,7 @@ export const FormVideo = () => {
       name: "title",
       valid: errorTitle,
       value: title,
-      helperText: "completa el campo titulo",
+      helperText: "completa el campo titulo, debe tener al menos 2 caracteres",
       onchange: handleChange,
       validator: valTitle,
       seter: setTitle,
@@ -131,7 +131,7 @@ export const FormVideo = () => {
       name: "url",
       valid: errorLinkVideo,
       value: linkVideo,
-      helperText: "completa el campo",
+      helperText: "El link debe ser un link de youtube valido",
       onchange: handleChange,
       validator: valLinkVideo,
       seter: setLinkVideo,
@@ -144,7 +144,7 @@ export const FormVideo = () => {
       name: "image",
       valid: errorLinImg,
       value: linImg,
-      helperText: "completa el campo",
+      helperText: "Link de imagen no valido",
       onchange: handleChange,
       validator: valLinkImg,
       seter: setLinkImg,
@@ -158,7 +158,7 @@ export const FormVideo = () => {
       select: true,
       valid: errorCategory,
       value: category,
-      helperText: "completa el campo",
+      helperText: "Seleccione una categoria",
       onchange: handleChange,
       validator: valCategory,
       seter: setCategory,
@@ -172,7 +172,7 @@ export const FormVideo = () => {
       multiline: true,
       valid: errorDescription,
       value: description,
-      helperText: "completa el campo",
+      helperText: "completa el campo, debe contener menos de 300 caracteres.",
       onchange: handleChange,
       validator: valDescription,
       seter: setDescription,
@@ -185,7 +185,7 @@ export const FormVideo = () => {
       name: "user",
       valid: errorUsuario,
       value: Usuario,
-      helperText: "completa el campo",
+      helperText: "completa el campo, debe tener al menos 3 caracteres",
       onchange: handleChange,
       validator: valUser,
       seter: setUsuario,
@@ -243,7 +243,7 @@ export const FormVideo = () => {
               <TextField
                 key={name}
                 name={name}
-                sx={{ width: "60%" }}
+                sx={{ width: "70%" }}
                 multiline={multiline ? true : false}
                 select={select}
                 label={label}
@@ -262,7 +262,7 @@ export const FormVideo = () => {
                   dataCategory?.map((option, index) => (
                     <MenuItem
                       value={option.name}
-                      children={option.name}
+                      children={option.name.toLowerCase()}
                       key={index}
                       onClick={() => {
                         seter(option.name);
