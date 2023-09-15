@@ -1,4 +1,4 @@
-import { Boton } from "../../CustomTheme/CustomComponents";
+import { Boton } from "../CustomTheme/CustomComponents";
 
 interface ButtonProps {
   typeButton: string;
@@ -16,7 +16,7 @@ export const Button = (props: ButtonProps): React.JSX.Element => {
         $colorRef={color}
         $paddingRef={padding}
       >
-        {content}
+        {content.toUpperCase()}
       </Boton>
     </>
   );

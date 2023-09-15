@@ -1,7 +1,7 @@
-import { NavBar, Logo } from "../../CustomTheme/CustomComponents";
-import { Button } from "../../Pages/Button/Button";
+import { NavBar, Logo } from "../../utils/CustomTheme/CustomComponents";
+import { Button } from "../../utils/Button/Button";
 import logo from "../../assets/logo.png";
-import { colorresCSS } from "../../CustomTheme/variables";
+import { colorresCSS } from "../../utils/CustomTheme/variables";
 
 import { Link } from "react-router-dom";
 
@@ -11,10 +11,10 @@ export const Header = (): React.JSX.Element => {
   return (
     <>
       <NavBar>
-        <Link to="/home">
+        <Link to="/">
           <Logo src={logo} alt="Logotipo" />
         </Link>
-        {pathName === "/home" && (
+        {pathName === "/" && (
           <Link to="/formvideo">
             <Button
               typeButton="button"

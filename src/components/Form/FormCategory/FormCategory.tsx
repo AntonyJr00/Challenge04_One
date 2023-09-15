@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 
 import { Box, FormControl, TextField, Typography } from "@mui/material";
-import { Button } from "../../../Pages/Button/Button";
-import { colorresCSS } from "../../../CustomTheme/variables";
+import { Button } from "../../../utils/Button/Button";
+import { colorresCSS } from "../../../utils/CustomTheme/variables";
 import { cyan } from "@mui/material/colors";
 
 import { valTitle, valColor, valDescription, valUser } from "../validacion";

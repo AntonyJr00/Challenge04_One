@@ -6,7 +6,7 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { TableCategoryRows } from "../../../Pages/TableCategoryRow/TableCategoryRows";
+import { TableCategoryRows } from "../../../utils/TableCategoryRow/TableCategoryRows";
 import { blueGrey } from "@mui/material/colors";
 
 import { Categories } from "../../../models/dbModels";

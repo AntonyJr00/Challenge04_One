@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { Wrapper } from "../../CustomTheme/CustomComponents";
+import { Wrapper } from "../../utils/CustomTheme/CustomComponents";
 import banner from "../../assets/banner.png";
 
 export const Banner = (): React.JSX.Element => {

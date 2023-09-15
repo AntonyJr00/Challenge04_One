@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import logoFooter from "../../assets/logo.png";
-import { colorresCSS } from "../../CustomTheme/variables";
+import { colorresCSS } from "../../utils/CustomTheme/variables";
 
 export const Footer = (): React.ReactElement => {
   return (

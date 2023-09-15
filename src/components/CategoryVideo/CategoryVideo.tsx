@@ -1,10 +1,10 @@
 import { Box } from "@mui/joy";
 import { Container, Typography } from "@mui/material";
 import { useFetchCategory, useFetchVideos } from "../../Services/useFetch";
-import { Button } from "../../Pages/Button/Button";
+import { Button } from "../../utils/Button/Button";
 import { Categories } from "../../models/dbModels";
-import { colorresCSS } from "../../CustomTheme/variables";
-import { Slider } from "../Home/Slider/Slider";
+import { colorresCSS } from "../../utils/CustomTheme/variables";
+import { Slider } from "../Slider/Slider";
 
 export const CategoryVideo = (): React.JSX.Element => {
   const { dataVideos } = useFetchVideos();
@@ -14,12 +14,7 @@ export const CategoryVideo = (): React.JSX.Element => {
 
   return (
     <>
-      <Box
-        p={2}
-        sx={{
-          backgroundColor: `${colorresCSS.black.black_one}`,
-        }}
-      >
+      <Box p={2} sx={{ backgroundColor: `${colorresCSS.black.black_one}` }}>
         {dataCategory?.map((category: Categories) => {
           const { id, name, color, description } = category;
           const videoForCategory = filterVideosCategory(name);
