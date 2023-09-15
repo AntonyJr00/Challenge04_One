@@ -16,7 +16,7 @@ import {
   valLinkImg,
   valCategory,
   valDescription,
-  valUser,
+  valCodeSegurity,
 } from "../validacion";
 import { Link } from "react-router-dom";
 import { useFetchCategory } from "../../../Services/useFetch";
@@ -35,6 +35,7 @@ export const FormVideo = () => {
       description: "",
       url: "",
       image: "",
+      code: "",
     }),
     []
   );
@@ -46,7 +47,7 @@ export const FormVideo = () => {
   const [linImg, setLinkImg] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [Usuario, setUsuario] = useState("");
+  const [securityCode, setSecurityCode] = useState("");
 
   const [errorTitle, setErrorTitle] = useState<null | boolean>(null);
   const [errorLinkVideo, setErrorLinkVideo] = useState<null | boolean>(null);
@@ -55,7 +56,9 @@ export const FormVideo = () => {
   const [errorDescription, setErrorDescription] = useState<null | boolean>(
     null
   );
-  const [errorUsuario, setErrorUsuario] = useState<null | boolean>(null);
+  const [errorSecurityCode, setErrorSecurityCode] = useState<null | boolean>(
+    null
+  );
 
   const api = useMemo(() => helpHttp(), []);
 
@@ -68,7 +71,10 @@ export const FormVideo = () => {
       })
       .then((res) => {
         console.log(res);
-        if (!res.err) console.log(formVideo);
+        if (!res.err) {
+          console.log(formVideo);
+          handleClear();
+        }
       });
   };
 
@@ -87,7 +93,7 @@ export const FormVideo = () => {
     setLinkImg("");
     setCategory("");
     setDescription("");
-    setUsuario("");
+    setSecurityCode("");
     setFormVideo(initialForm);
   };
 
@@ -99,7 +105,7 @@ export const FormVideo = () => {
       errorDescription &&
       errorLinImg &&
       errorLinkVideo &&
-      errorUsuario
+      errorSecurityCode
     ) {
       console.log("formulario video");
       createVideo(formVideo);
@@ -179,17 +185,17 @@ export const FormVideo = () => {
       setValid: setErrorDescription,
     },
     {
-      label: "Usuario",
+      label: "Codigo de Seguridad",
       variant: "outlined",
       type: "text",
-      name: "user",
-      valid: errorUsuario,
-      value: Usuario,
-      helperText: "completa el campo, debe tener al menos 3 caracteres",
+      name: "code",
+      valid: errorSecurityCode,
+      value: securityCode,
+      helperText: "introduzca un codigo de seguridad de 5 digitos",
       onchange: handleChange,
-      validator: valUser,
-      seter: setUsuario,
-      setValid: setErrorUsuario,
+      validator: valCodeSegurity,
+      seter: setSecurityCode,
+      setValid: setErrorSecurityCode,
     },
   ];
 

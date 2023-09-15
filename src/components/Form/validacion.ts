@@ -1,4 +1,4 @@
-export const valTitle = (value: string) => /^[A-Za-z\s\-_]{3,}$/.test(value);
+export const valTitle = (value: string) => /^[A-Za-z0-9\s\-_]{3,}$/.test(value);
 
 export const valLinkVideo = (value: string) => {
   const valor = value;
@@ -23,11 +23,11 @@ export const valLinkImg = (value: string) => {
   return expresion.test(valueImg);
 };
 
-export const valCategory = (value: string) => /^[a-zA-Z_-]+$/.test(value);
+export const valCategory = (value: string) => /^[a-zA-Z _-]+$/.test(value);
 
 export const valDescription = (value: string) => /^.{1,300}$/.test(value);
 
-export const valUser = (value: string) => /^[A-Za-z\s]{3,}$/.test(value);
+export const valCodeSegurity = (value: string) => /^\d{5}$/.test(value);
 
 export const valColor = (value: string) =>
   /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$/.test(value);

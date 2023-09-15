@@ -1,12 +1,3 @@
-export interface newVideo {
-  title: string;
-  linkVideo: string;
-  linkImg: string;
-  catergory: string;
-  description: string;
-  user: string;
-}
-
 export interface Video {
   id: number | string;
   title: string;
@@ -14,6 +5,7 @@ export interface Video {
   description: string;
   url: string;
   image: string;
+  code: string;
 }
 
 export interface Categories {
@@ -21,5 +13,5 @@ export interface Categories {
   name: string;
   color: string;
   description: string;
-  user: string;
+  code: string;
 }

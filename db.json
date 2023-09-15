@@ -30,11 +30,11 @@
       "user": "Antony"
     },
     {
-      "id": "dca157b7-fb78-4eda-be41-f52f5868a161",
-      "name": "Design UX",
-      "color": "#dfb620",
-      "description": "Formacion de diseño y estilizacion de Alura Latam",
-      "user": "Alex design"
+      "id": "655a02b7-b05d-4533-bdcc-3c9ef500d662",
+      "name": "Innovacion y Gestion",
+      "color": "#ff8a05",
+      "description": "Formacion Innovacion y gestion de Alura Latam",
+      "user": "abcdef"
     }
   ],
   "videos": [
@@ -247,6 +247,78 @@
       "url": "https://www.youtube.com/watch?v=x9PlR2CLxwY",
       "image": "https://i3.ytimg.com/vi/x9PlR2CLxwY/maxresdefault.jpg",
       "user": "Rafa Gonzales"
+    },
+    {
+      "id": "a152c5b6-4e23-4e8d-8ff3-38c67c380d80",
+      "title": "Que son las Soft Skills",
+      "category": "Innovacion y Gestion",
+      "description": "Formacion de Innovacion y Gestion de Alura Latam",
+      "url": "https://www.youtube.com/watch?v=vhwspfvI52k&pp=ygUXcXVlIHNvbiBsb3Mgc29mdCBza2lsbHM%3D",
+      "image": "https://i3.ytimg.com/vi/vhwspfvI52k/maxresdefault.jpg",
+      "user": "qpwioe"
+    },
+    {
+      "id": "8c17fc1a-19ca-4e5b-9575-aff8d761aa5e",
+      "title": "Las 7 soft skills mas deseadas",
+      "category": "Innovacion y Gestion",
+      "description": "Formacion de Innovacion y gestion de Alura Latam",
+      "url": "https://www.youtube.com/watch?v=YhR7Zp8NUzE&pp=ygUfbGFzIDcgc29mdCBza2lsbHMgbWFzIGRlc2VhZGFkcw%3D%3D",
+      "image": "https://i3.ytimg.com/vi/YhR7Zp8NUzE/maxresdefault.jpg",
+      "code": "32154"
+    },
+    {
+      "id": "8ddf0521-0a20-4808-857d-4a89ce486fb4",
+      "title": "Metodologias Agiles",
+      "category": "Innovacion y Gestion",
+      "description": "Aprendiendo sobre las metodologias agiles",
+      "url": "https://www.youtube.com/watch?v=6N3OkLCfK-0&pp=ygUfbWV0b2RvbG9naWFzIGFnaWxlcyBhbHVyYSBsYXRhbQ%3D%3D",
+      "image": "https://i3.ytimg.com/vi/6N3OkLCfK-0/maxresdefault.jpg",
+      "code": "45689"
+    },
+    {
+      "id": "5f1f110b-f11e-4a7c-abec-f4fb1d4db601",
+      "title": "Desarrolla tu Marca Personal",
+      "category": "Innovacion y Gestion",
+      "description": "Marca Personal",
+      "url": "https://www.youtube.com/watch?v=LAK-RduBJUs&pp=ygUhYWx1cmEgbGF0YW0gaW5ub3ZhY2lvbiB5IGdlc3Rpb24g",
+      "image": "https://i3.ytimg.com/vi/LAK-RduBJUs/maxresdefault.jpg",
+      "code": "45588"
+    },
+    {
+      "id": "e184c35d-f9bc-4ca8-9dd8-21110e9818f1",
+      "title": "Spring FrameWork",
+      "category": "back-end",
+      "description": "Conociendo FrameWordks",
+      "url": "https://www.youtube.com/watch?v=t-iqt1b2qqk&pp=ygUQc3ByaW5nIGZyYW1ld29yaw%3D%3D",
+      "image": "https://i3.ytimg.com/vi/t-iqt1b2qqk/maxresdefault.jpg",
+      "code": "32154"
+    },
+    {
+      "id": "764739bc-baf0-4934-9b99-afcafb8f7e91",
+      "title": "Que es SQL y NOSQL",
+      "category": "back-end",
+      "description": "Aprendiendo Sobre Base de Datos",
+      "url": "https://www.youtube.com/watch?v=cLLKVd5CNLc&pp=ygUTcXVlIGVzIHNxbCB5IG5vc3FsIA%3D%3D",
+      "image": "https://i3.ytimg.com/vi/cLLKVd5CNLc/maxresdefault.jpg",
+      "code": "65487"
+    },
+    {
+      "id": "1385e3e2-9557-4285-9af4-c826168eef02",
+      "title": "Simplificando tu codigo en Java",
+      "category": "back-end",
+      "description": "Aprendiendo sobre Java y los Enums",
+      "url": "https://www.youtube.com/watch?v=EoPvlE85XAQ&pp=ygUqc2ltcGxpZmljYSB0dSBjb2RpZ28gZW4gamF2YSBjb24gbG9zIGVudW1z",
+      "image": "https://i3.ytimg.com/vi/EoPvlE85XAQ/maxresdefault.jpg",
+      "code": ""
+    },
+    {
+      "id": "c0dbdc5b-8e5d-4e34-b7d1-3aa5d578ca97",
+      "title": "Explorando el Backend en el Desarrollo Web",
+      "category": "back-end",
+      "description": "Todo sobre el backend en el desarrollo web",
+      "url": "https://www.youtube.com/watch?v=Z024LSCMqFk&pp=ygUTYWx1cmEgbGF0YW0gYmFja2VuZA%3D%3D",
+      "image": "https://i3.ytimg.com/vi/Z024LSCMqFk/maxresdefault.jpg",
+      "code": "45687"
     }
   ]
 }

@@ -5,7 +5,12 @@ import { Button } from "../../../utils/Button/Button";
 import { colorresCSS } from "../../../utils/CustomTheme/variables";
 import { cyan } from "@mui/material/colors";
 
-import { valTitle, valColor, valDescription, valUser } from "../validacion";
+import {
+  valTitle,
+  valColor,
+  valDescription,
+  valCodeSegurity,
+} from "../validacion";
 import { TableCategory } from "./TableCategory";
 
 import { helpHttp } from "../../../Services/helpers/helpHttp";
@@ -20,6 +25,7 @@ export const FormCategory = () => {
       color: "#2cbed1",
       description: "",
       user: "",
+      code: "",
     }),
     []
   );
@@ -31,14 +37,16 @@ export const FormCategory = () => {
   const [title, setTitle] = useState("");
   const [color, setColor] = useState("#cccccc");
   const [description, setDescription] = useState("");
-  const [Usuario, setUsuario] = useState("");
+  const [securityCode, setSecurityCode] = useState("");
 
   const [errorTitle, setErrorTitle] = useState<null | boolean>(null);
   const [errorColor, setErrorColor] = useState<null | boolean>(null);
   const [errorDescription, setErrorDescription] = useState<null | boolean>(
     null
   );
-  const [errorUsuario, setErrorUsuario] = useState<null | boolean>(null);
+  const [errorSecurityCode, setErrorSecurityCode] = useState<null | boolean>(
+    null
+  );
 
   const url = "http://localhost:3000/categories";
   const api = useMemo(() => helpHttp(), []);
@@ -70,7 +78,7 @@ export const FormCategory = () => {
       setTitle(toEdit?.name);
       setColor(toEdit?.color);
       setDescription(toEdit?.description);
-      setUsuario(toEdit?.user);
+      setSecurityCode(toEdit?.code);
     }
   }, [toEdit]);
   //------------------------------------------------------------------------------///
@@ -138,14 +146,14 @@ export const FormCategory = () => {
     setTitle("");
     setColor("#f5f5f5");
     setDescription("");
-    setUsuario("");
+    setSecurityCode("");
     setForm(initialForm);
     setToEdit(null);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (errorTitle && errorColor && errorDescription && errorUsuario) {
+    if (errorTitle && errorColor && errorDescription && errorSecurityCode) {
       if (form.id === null) createData(form);
       else updateData(form);
     } else console.log("No se puedo pipipipip");
@@ -193,17 +201,17 @@ export const FormCategory = () => {
       setValid: setErrorDescription,
     },
     {
-      label: "Usuario",
+      label: "Codigo de Seguridad",
       variant: "outlined",
       type: "text",
-      name: "user",
-      valid: errorUsuario,
-      value: Usuario,
-      helperText: "completa el campo, debe contener al menos 3 caracteres.",
+      name: "code",
+      valid: errorSecurityCode,
+      value: securityCode,
+      helperText: "introduzca un codigo de 5 degitos.",
       onchange: handleChange,
-      validator: valUser,
-      seter: setUsuario,
-      setValid: setErrorUsuario,
+      validator: valCodeSegurity,
+      seter: setSecurityCode,
+      setValid: setErrorSecurityCode,
     },
   ];
 
