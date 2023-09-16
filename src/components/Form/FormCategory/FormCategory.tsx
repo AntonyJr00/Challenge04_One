@@ -69,7 +69,6 @@ export const FormCategory = () => {
   useEffect(() => {
     if (toEdit) {
       setForm(toEdit);
-      console.log(toEdit);
     } else setForm(initialForm);
   }, [initialForm, toEdit]);
 
@@ -115,7 +114,6 @@ export const FormCategory = () => {
       .finally(() => handleClear());
   };
   const deleteData = (id: number | null | string) => {
-    console.log(id);
     api
       .del(`${url}/${id}`, {
         headers: { "content-type": "application/json" },

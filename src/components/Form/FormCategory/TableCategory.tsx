@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -19,8 +17,6 @@ interface TableCategoryProps {
 
 export const TableCategory = (props: TableCategoryProps) => {
   const { dataDb, setToEdit, deleteData } = props;
-
-  useEffect(() => console.log(dataDb), [dataDb]);
 
   return (
     <Paper sx={{ border: `1px solid ${blueGrey[300]}`, margin: "1rem" }}>

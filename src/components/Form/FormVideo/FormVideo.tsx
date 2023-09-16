@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import {
   Box,
   FormControl,
@@ -70,7 +70,6 @@ export const FormVideo = () => {
         headers: { "content-type": "application/json" },
       })
       .then((res) => {
-        console.log(res);
         if (!res.err) {
           console.log(formVideo);
           handleClear();
@@ -107,14 +106,10 @@ export const FormVideo = () => {
       errorLinkVideo &&
       errorSecurityCode
     ) {
-      console.log("formulario video");
+      console.log("formulario video exitoso");
       createVideo(formVideo);
     } else console.log("No se puedo pipipipip");
   };
-
-  useEffect(() => {
-    console.log(formVideo);
-  }, [formVideo]);
 
   const personalData = [
     {
