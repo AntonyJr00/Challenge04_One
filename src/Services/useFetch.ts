@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Categories, Video } from "../models/dbModels";
 
 export const useFetchVideos = () => {
-  const url = "http://localhost:3000/videos";
+  const url = "https://6508a0ba56db83a34d9c94b4.mockapi.io/videos";
   const [dataVideos, setDataVideos] = useState<Video[] | null>(null);
   useEffect(() => {
     fetch(url)
@@ -13,7 +13,7 @@ export const useFetchVideos = () => {
 };
 
 export const useFetchCategory = () => {
-  const url = "http://localhost:3000/categories";
+  const url = "https://6508a0ba56db83a34d9c94b4.mockapi.io/categories";
   const [dataCategory, setDataCategory] = useState<Categories[] | null>(null);
   useEffect(() => {
     fetch(url)

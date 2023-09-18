@@ -6,7 +6,6 @@ import NewCategory from "./Pages/NewCategory/NewCategory";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import Error404 from "./Pages/Error404/Error404";
-import { Banner } from "./components/Banner/Banner";
 
 function App() {
   return (

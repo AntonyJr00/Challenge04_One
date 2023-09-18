@@ -65,7 +65,7 @@ export const FormVideo = () => {
   const createVideo = (data: Video) => {
     data.id = uuidv4();
     api
-      .post("http://localhost:3000/videos", {
+      .post("https://6508a0ba56db83a34d9c94b4.mockapi.io/videos", {
         body: JSON.stringify(data),
         headers: { "content-type": "application/json" },
       })

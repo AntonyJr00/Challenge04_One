@@ -63,6 +63,7 @@ export const Boton = styled.button<BotonProps>`
   border: 1px solid transparent;
   background-color: ${(props) => props.$colorRef};
   color: white;
+  font-weight: 700;
   padding: ${(props: BotonProps) => props.$paddingRef};
   border-radius: 4px;
   cursor: pointer;

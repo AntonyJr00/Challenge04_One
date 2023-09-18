@@ -50,7 +50,7 @@ export const FormCategory = () => {
   );
   const [message, setMessage] = useState(false);
 
-  const url = "http://localhost:3000/categories";
+  const url = "https://6508a0ba56db83a34d9c94b4.mockapi.io/categories";
   const api = useMemo(() => helpHttp(), []);
 
   useEffect(() => {
@@ -88,7 +88,6 @@ export const FormCategory = () => {
         headers: { "content-type": "application/json" },
       })
       .then((res) => {
-        console.log(res);
         if (!res.err) {
           if (db) setDb([...db, res]);
         }

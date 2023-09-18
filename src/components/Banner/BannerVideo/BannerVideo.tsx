@@ -17,7 +17,7 @@ export const BannerVideo = () => {
   };
   const [db, setDb] = useState(initialForm);
 
-  const url = "http://localhost:3000/videos";
+  const url = "https://6508a0ba56db83a34d9c94b4.mockapi.io/videos";
 
   useEffect(() => {
     helpHttp()
@@ -39,7 +39,7 @@ export const BannerVideo = () => {
     >
       <Grid item md={6} lg={7} xs={12}>
         <Button
-          color={blueGrey[200]}
+          color={blueGrey[300]}
           content={db.category}
           typeButton="button"
           padding="1rem 2rem"
