@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import { blueGrey } from "@mui/material/colors";
 import { Button } from "../../../utils/Button/Button";
 import { colorresCSS } from "../../../utils/CustomTheme/variables";
 import { useEffect, useState } from "react";
@@ -38,14 +39,14 @@ export const BannerVideo = () => {
     >
       <Grid item md={6} lg={7} xs={12}>
         <Button
-          color={colorresCSS.courses.violet}
+          color={blueGrey[200]}
           content={db.category}
           typeButton="button"
           padding="1rem 2rem"
         />
         <Typography
           component={"h2"}
-          color={colorresCSS.gray.gray_two}
+          color={colorresCSS.gray.gray_three}
           fontWeight={"bold"}
           variant="h5"
           marginTop={1}
@@ -55,25 +56,27 @@ export const BannerVideo = () => {
         </Typography>
         <Typography
           component={"p"}
-          color={colorresCSS.gray.gray_one}
+          color={colorresCSS.gray.gray_two}
           fontWeight={100}
           fontSize={"14px"}
         >
           {db.description}
         </Typography>
       </Grid>
-      <Grid md={5} lg={4} item xs={8}>
-        <img
-          loading="lazy"
-          src={db.image}
-          alt="imagen-banner"
-          style={{
-            width: "80%",
-            height: "auto",
-            backgroundColor: "red",
-            outline: `3px solid ${colorresCSS.courses.violet}`,
-          }}
-        />
+      <Grid md={4} lg={3} item xs={10}>
+        <a href={db.url} target="_blank">
+          <img
+            loading="lazy"
+            src={db.image}
+            alt="imagen-banner"
+            style={{
+              width: "100%",
+              height: "auto",
+              backgroundColor: "red",
+              outline: `3px solid ${blueGrey[50]}`,
+            }}
+          />
+        </a>
       </Grid>
     </Grid>
   );

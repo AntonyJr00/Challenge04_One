@@ -71,7 +71,6 @@ export const FormVideo = () => {
       })
       .then((res) => {
         if (!res.err) {
-          console.log(formVideo);
           handleClear();
         }
       });
@@ -106,9 +105,8 @@ export const FormVideo = () => {
       errorLinkVideo &&
       errorSecurityCode
     ) {
-      console.log("formulario video exitoso");
       createVideo(formVideo);
-    } else console.log("No se puedo pipipipip");
+    } else console.log("No se pudo pipipipip");
   };
 
   const personalData = [

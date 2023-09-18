@@ -16,6 +16,7 @@ import { TableCategory } from "./TableCategory";
 import { helpHttp } from "../../../Services/helpers/helpHttp";
 import { Categories } from "../../../models/dbModels";
 import { v4 as uuidv4 } from "uuid";
+import { Message } from "../../../utils/Message";
 
 export const FormCategory = () => {
   const initialForm: Categories = useMemo(
@@ -47,6 +48,7 @@ export const FormCategory = () => {
   const [errorSecurityCode, setErrorSecurityCode] = useState<null | boolean>(
     null
   );
+  const [message, setMessage] = useState(false);
 
   const url = "http://localhost:3000/categories";
   const api = useMemo(() => helpHttp(), []);
@@ -63,9 +65,6 @@ export const FormCategory = () => {
       });
   }, []);
 
-  //------------------------------------------------------------------------------///
-  //------------------------------------------------------------------------------///
-
   useEffect(() => {
     if (toEdit) {
       setForm(toEdit);
@@ -73,7 +72,6 @@ export const FormCategory = () => {
   }, [initialForm, toEdit]);
 
   useEffect(() => {
-    console.log(toEdit);
     if (toEdit) {
       setTitle(toEdit?.name);
       setColor(toEdit?.color);
@@ -81,8 +79,6 @@ export const FormCategory = () => {
       setSecurityCode(toEdit?.code);
     }
   }, [toEdit]);
-  //------------------------------------------------------------------------------///
-  //------------------------------------------------------------------------------///
 
   const createData = (data: Categories) => {
     data.id = uuidv4();
@@ -127,16 +123,11 @@ export const FormCategory = () => {
       });
   };
 
-  //------------------------------------------------------------------------------///
-  //------------------------------------------------------------------------------///
-  //------------------------------------------------------------------------------///
-
   const handleChange = (
     evento: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     seter: React.Dispatch<React.SetStateAction<string>>
   ) => {
     const value = evento.target.value;
-
     setForm({ ...form, [evento.target.name]: value });
     seter(value);
   };
@@ -155,7 +146,8 @@ export const FormCategory = () => {
     if (errorTitle && errorColor && errorDescription && errorSecurityCode) {
       if (form.id === null) createData(form);
       else updateData(form);
-    } else console.log("No se puedo pipipipip");
+      setMessage(false);
+    } else setMessage(true);
   };
 
   const personalData = [
@@ -272,15 +264,22 @@ export const FormCategory = () => {
                 type={type}
                 error={valid === false}
                 helperText={valid === false && helperText}
-                onChange={(e) => onchange(e, seter)}
+                onChange={(e) => {
+                  onchange(e, seter);
+                }}
                 onBlur={(e) => {
-                  const valido = validator(e.target.value);
+                  const valor = e.target.value;
+                  const valido = validator(valor);
                   setValid(valido);
                 }}
               />
             );
           })}
         </FormControl>
+
+        {message && (
+          <Message data="Error al enviar el formulario, intentelo de nuevo" />
+        )}
         <FormControl
           fullWidth
           sx={{

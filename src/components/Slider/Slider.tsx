@@ -1,7 +1,6 @@
 import SliderSlick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useState, useEffect } from "react";
 import { CardMedia } from "@mui/material";
 import { Video } from "../../models/dbModels";
 
@@ -12,39 +11,41 @@ interface PropsSlider {
 
 export const Slider = (props: PropsSlider): React.ReactElement => {
   const { videoForCategory, colors } = props;
-  const [settings, setSettings] = useState({
+
+  const settings = {
+    arrows: false,
     dots: false,
-    lazyload: true,
+    lazyload: "ondemand",
     infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  });
-
-  useEffect(() => {
-    const pantalla = window.screen.width;
-    let newSettings = { ...settings };
-
-    if (pantalla > 430)
-      newSettings = { ...settings, slidesToShow: 2, slidesToScroll: 2 };
-    if (pantalla > 768)
-      newSettings = { ...settings, slidesToShow: 3, slidesToScroll: 3 };
-    if (pantalla >= 1440)
-      newSettings = { ...settings, slidesToShow: 4, slidesToScroll: 4 };
-
-    if (videoForCategory && videoForCategory?.length < 3)
-      newSettings = {
-        ...settings,
-        slidesToShow: videoForCategory.length,
-        slidesToScroll: videoForCategory.length,
-      };
-
-    if (
-      newSettings.slidesToShow !== settings.slidesToShow ||
-      newSettings.slidesToScroll !== settings.slidesToScroll
-    )
-      setSettings(newSettings);
-  }, [settings, videoForCategory]);
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <SliderSlick {...settings}>
@@ -57,7 +58,6 @@ export const Slider = (props: PropsSlider): React.ReactElement => {
               component="img"
               sx={{
                 width: "97%",
-                maxWidth: "335px",
                 gap: "10px",
                 outline: `3px solid ${colors}`,
                 margin: "2px",

@@ -8,6 +8,7 @@ import { TableCategoryRows } from "../../../utils/TableCategoryRow/TableCategory
 import { blueGrey } from "@mui/material/colors";
 
 import { Categories } from "../../../models/dbModels";
+import { Loader } from "../../../utils/Loader";
 
 interface TableCategoryProps {
   dataDb: Categories[] | null;
@@ -34,20 +35,28 @@ export const TableCategory = (props: TableCategoryProps) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {dataDb && dataDb?.length > 0 ? (
-            dataDb?.map((data, index) => (
-              <TableCategoryRows
-                key={index}
-                data={data}
-                index={index}
-                setToEdit={setToEdit}
-                deleteData={deleteData}
-              />
-            ))
+          {dataDb ? (
+            dataDb?.length > 0 ? (
+              dataDb?.map((data, index) => (
+                <TableCategoryRows
+                  key={index}
+                  data={data}
+                  index={index}
+                  setToEdit={setToEdit}
+                  deleteData={deleteData}
+                />
+              ))
+            ) : (
+              <TableRow>
+                <TableCell align="center" colSpan={4}>
+                  No Content
+                </TableCell>
+              </TableRow>
+            )
           ) : (
             <TableRow>
               <TableCell align="center" colSpan={4}>
-                No Content
+                <Loader />
               </TableCell>
             </TableRow>
           )}

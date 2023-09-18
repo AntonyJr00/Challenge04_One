@@ -60,10 +60,20 @@ interface BotonProps {
 }
 
 export const Boton = styled.button<BotonProps>`
-  border: 1px solid white;
+  border: 1px solid transparent;
   background-color: ${(props) => props.$colorRef};
   color: white;
-  padding: ${(props) => props.$paddingRef};
-  border-radius: 7px;
+  padding: ${(props: BotonProps) => props.$paddingRef};
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
+export const BotonNav = styled.button`
+  font-size: 14px;
+  color: white;
+  background-color: ${colorresCSS.black.black_one};
+  border: 1px solid white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
   cursor: pointer;
 `;

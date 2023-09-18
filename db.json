@@ -17,9 +17,9 @@
     {
       "id": "1694636522887",
       "name": "data-science",
-      "color": "#c91d92",
-      "description": "Analista y gestion de datos",
-      "code": "Antony"
+      "color": "#7142f0",
+      "description": "Analista y Gestión de Datos",
+      "code": "25641"
     },
     {
       "id": "655a02b7-b05d-4533-bdcc-3c9ef500d662",
@@ -137,24 +137,6 @@
       "url": "https://youtu.be/9w33u7hBWyk?si=vWFU1Y5jfF5mv6m6",
       "image": "https://i3.ytimg.com/vi/9w33u7hBWyk/maxresdefault.jpg",
       "code": "Jonmircha"
-    },
-    {
-      "id": "9a9ec203-8ee8-4bb1-a573-4111e69f1f8a",
-      "title": "RoadMap Data Science",
-      "category": "data-science",
-      "description": "Ruta data-science 2023 ",
-      "url": "https://www.youtube.com/watch?v=x9PlR2CLxwY",
-      "image": "https://i3.ytimg.com/vi/x9PlR2CLxwY/maxresdefault.jpg",
-      "code": "Rafa Gonzales"
-    },
-    {
-      "id": "a152c5b6-4e23-4e8d-8ff3-38c67c380d80",
-      "title": "Que son las Soft Skills",
-      "category": "Innovacion y Gestion",
-      "description": "Formacion de Innovacion y Gestion de Alura Latam",
-      "url": "https://www.youtube.com/watch?v=vhwspfvI52k&pp=ygUXcXVlIHNvbiBsb3Mgc29mdCBza2lsbHM%3D",
-      "image": "https://i3.ytimg.com/vi/vhwspfvI52k/maxresdefault.jpg",
-      "code": "qpwioe"
     },
     {
       "id": "8c17fc1a-19ca-4e5b-9575-aff8d761aa5e",

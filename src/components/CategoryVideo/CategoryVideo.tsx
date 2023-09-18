@@ -1,5 +1,6 @@
 import { Box } from "@mui/joy";
 import { Container, Typography } from "@mui/material";
+import { blueGrey } from "@mui/material/colors";
 import { useFetchCategory, useFetchVideos } from "../../Services/useFetch";
 import { Button } from "../../utils/Button/Button";
 import { Categories } from "../../models/dbModels";
@@ -22,15 +23,28 @@ export const CategoryVideo = (): React.JSX.Element => {
             videoForCategory &&
             videoForCategory?.length > 0 && (
               <Container key={id} maxWidth="xl" sx={{ marginTop: "2rem" }}>
-                <Button
-                  typeButton="button"
-                  padding="1rem 2rem"
-                  content={name}
-                  color={color}
-                />
-                <Typography variant="h6" mt={1} mb={1} color="lightblue">
-                  {description}
-                </Typography>
+                <Box
+                  pb={2}
+                  display={"flex"}
+                  gap={1}
+                  alignItems={"center"}
+                  flexWrap={"wrap"}
+                >
+                  <Button
+                    typeButton="button"
+                    padding="1rem 2rem"
+                    content={name}
+                    color={color}
+                  />
+                  <Typography
+                    variant="h6"
+                    component={"h3"}
+                    color={blueGrey[100]}
+                    fontSize={"14px"}
+                  >
+                    {description}
+                  </Typography>
+                </Box>
                 <Box>
                   <Slider videoForCategory={videoForCategory} colors={color} />
                 </Box>
