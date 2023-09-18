@@ -73,6 +73,7 @@ export const FormCategory = () => {
   }, [initialForm, toEdit]);
 
   useEffect(() => {
+    console.log(toEdit);
     if (toEdit) {
       setTitle(toEdit?.name);
       setColor(toEdit?.color);

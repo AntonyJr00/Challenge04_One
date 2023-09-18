@@ -5,28 +5,28 @@
       "name": "front-end",
       "color": "#6BD1FF",
       "description": "Formacion Front-End de Alura Latam",
-      "user": ""
+      "code": ""
     },
     {
       "id": "2",
       "name": "back-end",
       "color": "#00C86F",
       "description": "Formacion Back-End de Alura Latam",
-      "user": ""
+      "code": ""
     },
     {
       "id": "1694636522887",
       "name": "data-science",
       "color": "#c91d92",
       "description": "Analista y gestion de datos",
-      "user": "Antony"
+      "code": "Antony"
     },
     {
       "id": "655a02b7-b05d-4533-bdcc-3c9ef500d662",
       "name": "Innovacion y Gestion",
       "color": "#ff8a05",
       "description": "Formacion Innovacion y gestion de Alura Latam",
-      "user": "abcdef"
+      "code": "abcdef"
     }
   ],
   "videos": [
@@ -36,7 +36,8 @@
       "category": "back-end",
       "description": "Comprehensive beginner's course on the Django agile framework for Python.",
       "url": "https://www.youtube.com/embed/T1intZyhXDU",
-      "image": "https://i3.ytimg.com/vi/T1intZyhXDU/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/T1intZyhXDU/maxresdefault.jpg",
+      "code": "56455"
     },
     {
       "id": 15,
@@ -44,7 +45,8 @@
       "category": "front-end",
       "description": "HTML5 course from FreeCodeCamp with over 4 million views, ideal for beginners.",
       "url": "https://www.youtube.com/embed/pQN-pnXPaVg",
-      "image": "https://i3.ytimg.com/vi/pQN-pnXPaVg/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/pQN-pnXPaVg/maxresdefault.jpg",
+      "code": "78871"
     },
     {
       "id": 16,
@@ -52,7 +54,8 @@
       "category": "front-end",
       "description": "HTML5 course from FreeCodeCamp introducing programming along with HTML.",
       "url": "https://www.youtube.com/embed/GDGejH3SDNQ",
-      "image": "https://i3.ytimg.com/vi/GDGejH3SDNQ/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/GDGejH3SDNQ/maxresdefault.jpg",
+      "code": "78996"
     },
     {
       "id": 17,
@@ -60,7 +63,8 @@
       "category": "front-end",
       "description": "Comprehensive HTML course in Spanish with over 1 million views.",
       "url": "https://www.youtube.com/embed/MJkdaVFHrto",
-      "image": "https://i3.ytimg.com/vi/MJkdaVFHrto/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/MJkdaVFHrto/maxresdefault.jpg",
+      "code": "36361"
     },
     {
       "id": 18,
@@ -68,7 +72,8 @@
       "category": "front-end",
       "description": "Comprehensive HTML5 course in Spanish, easily understandable and useful for beginners, done in Visual Studio Code.",
       "url": "https://www.youtube.com/embed/vz4z0RLcAyk",
-      "image": "https://i3.ytimg.com/vi/vz4z0RLcAyk/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/vz4z0RLcAyk/maxresdefault.jpg",
+      "code": "1234"
     },
     {
       "id": 19,
@@ -76,7 +81,8 @@
       "category": "front-end",
       "description": "CSS course in Spanish ideal for beginners.",
       "url": "https://www.youtube.com/embed/wZniZEbPAzk",
-      "image": "https://i3.ytimg.com/vi/wZniZEbPAzk/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/wZniZEbPAzk/maxresdefault.jpg",
+      "code": "9876"
     },
     {
       "id": 20,
@@ -84,7 +90,8 @@
       "category": "front-end",
       "description": "CSS course in Spanish with over 3.5 million views and more than 9 hours of content, ideal for beginners.",
       "url": "https://www.youtube.com/embed/OWKXEJN67FE",
-      "image": "https://i3.ytimg.com/vi/OWKXEJN67FE/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/OWKXEJN67FE/maxresdefault.jpg",
+      "code": "9874"
     },
     {
       "id": 21,
@@ -92,7 +99,8 @@
       "category": "front-end",
       "description": "CSS course from scratch ideal for beginners.",
       "url": "https://www.youtube.com/embed/N8V5JhasaSE",
-      "image": "https://i3.ytimg.com/vi/N8V5JhasaSE/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/N8V5JhasaSE/maxresdefault.jpg",
+      "code": "9865"
     },
     {
       "id": 22,
@@ -100,7 +108,8 @@
       "category": "front-end",
       "description": "Application course of HTML and CSS with included projects. Over 6 hours of content.",
       "url": "https://www.youtube.com/embed/AXPASVeX74o",
-      "image": "https://i3.ytimg.com/vi/AXPASVeX74o/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/AXPASVeX74o/maxresdefault.jpg",
+      "code": "6532"
     },
     {
       "id": 23,
@@ -108,7 +117,8 @@
       "category": "front-end",
       "description": "HTML and CSS course from FreeCodeCamp with over 1 million views, in Spanish.",
       "url": "https://www.youtube.com/embed/XqFR2lqBYPs",
-      "image": "https://i3.ytimg.com/vi/XqFR2lqBYPs/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/XqFR2lqBYPs/maxresdefault.jpg",
+      "code": "6554"
     },
     {
       "id": 24,
@@ -116,7 +126,8 @@
       "category": "front-end",
       "description": "Very comprehensive CSS course with over 11 hours of content.",
       "url": "https://www.youtube.com/embed/n4R2E7O-Ngo",
-      "image": "https://i3.ytimg.com/vi/n4R2E7O-Ngo/maxresdefault.jpg"
+      "image": "https://i3.ytimg.com/vi/n4R2E7O-Ngo/maxresdefault.jpg",
+      "code": "53323"
     },
     {
       "id": "d2187a64-1cb6-4fca-9e5a-469d3c9ab1f9",
@@ -125,7 +136,7 @@
       "description": "Curso de React Router",
       "url": "https://youtu.be/9w33u7hBWyk?si=vWFU1Y5jfF5mv6m6",
       "image": "https://i3.ytimg.com/vi/9w33u7hBWyk/maxresdefault.jpg",
-      "user": "Jonmircha"
+      "code": "Jonmircha"
     },
     {
       "id": "9a9ec203-8ee8-4bb1-a573-4111e69f1f8a",
@@ -134,7 +145,7 @@
       "description": "Ruta data-science 2023 ",
       "url": "https://www.youtube.com/watch?v=x9PlR2CLxwY",
       "image": "https://i3.ytimg.com/vi/x9PlR2CLxwY/maxresdefault.jpg",
-      "user": "Rafa Gonzales"
+      "code": "Rafa Gonzales"
     },
     {
       "id": "a152c5b6-4e23-4e8d-8ff3-38c67c380d80",
@@ -143,7 +154,7 @@
       "description": "Formacion de Innovacion y Gestion de Alura Latam",
       "url": "https://www.youtube.com/watch?v=vhwspfvI52k&pp=ygUXcXVlIHNvbiBsb3Mgc29mdCBza2lsbHM%3D",
       "image": "https://i3.ytimg.com/vi/vhwspfvI52k/maxresdefault.jpg",
-      "user": "qpwioe"
+      "code": "qpwioe"
     },
     {
       "id": "8c17fc1a-19ca-4e5b-9575-aff8d761aa5e",
