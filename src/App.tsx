@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/formvideo" element={<NewVideo />} />
         <Route path="/formcategory" element={<NewCategory />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="/*" element={<Error404 />} />
       </Routes>
       <Footer />
     </>
